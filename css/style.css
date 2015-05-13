@@ -1,0 +1,150 @@
+/* LOGIN */ 
+
+body
+{
+    background-color: #F26140;
+    font-family: 'Raleway', sans-serif;
+}
+
+#bgcolorlogin
+{
+    background-color: #EEEEEE;
+    width: 300px;
+    height: 105px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+#username
+{
+    display: block;
+    width: 250px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    margin-bottom: 10px;
+
+}
+
+#password
+{
+        display: block;
+    width: 250px;
+    height: 40px;
+        margin-left: auto;
+    margin-right: auto;
+    border: none;
+}
+
+input{
+    background-color: white!important;
+    font-family: 'Raleway';
+    font-size: 18px;
+    
+}
+
+::-webkit-input-placeholder {
+padding-left: 10px;  
+}
+
+:-moz-placeholder { /* Firefox 18- */
+padding-left: 10px;   
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+padding-left: 10px;    
+}
+
+:-ms-input-placeholder {  
+   padding-left: 10px;  
+}
+
+#submitlogin
+{
+    width: 300px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 25px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 20px;
+
+}
+
+.page-header
+{
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 120px;
+}
+
+/*MENU*/
+.slideout-menu {
+	position: fixed;
+	top: 0;
+	left: -250px;
+	width: 250px;
+	height: 100%;
+	background: #333;
+	z-index: 100;
+}
+.slideout-menu h3 {
+	position: relative;
+	padding: 12px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 400;
+	border-bottom: 4px solid #222;
+}
+.slideout-menu .slideout-menu-toggle {
+	position: absolute;
+	top: 12px;
+	right: 10px;
+	display: inline-block;
+	padding: 6px 9px 5px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	line-height: 1;
+	background: #222;
+	color: #999;
+	text-decoration: none;
+	vertical-align: top;
+}
+.slideout-menu .slideout-menu-toggle:hover {
+	color: #fff;
+}
+.slideout-menu ul {
+	list-style: none;
+	font-weight: 300;
+	border-top: 1px solid #151515;
+	border-bottom: 1px solid #454545;
+}
+.slideout-menu ul li {
+	border-top: 1px solid #454545;
+	border-bottom: 1px solid #151515;
+}
+.slideout-menu ul li a {
+	position: relative;
+	display: block;
+	padding: 10px;
+	color: #999;
+	text-decoration: none;
+}
+.slideout-menu ul li a:hover {
+	background: #000;
+	color: #fff;
+}
+.slideout-menu ul li a i {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	opacity: .5;
+}
