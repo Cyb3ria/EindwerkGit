@@ -4,12 +4,30 @@ session_start();
   include("Classes/event.class.php");
     
     $m = new Event();
-if  (!empty($_POST))
+    if  (!empty($_POST))
 	{
       $m->Title = $_POST['titel'];
       $m->Teaser = $_POST['teaser'];
       $m->Link = $_POST['link'];
-      $m->Beacon = $_POST['beacon'];
+      $m->Beacon = $_POST['beacon']; 
+    
+      $foto = $_FILES["file"]["name"];
+      $m->Foto = $foto;
+      $tmp_name = $_FILES['file']['tmp_name'];
+      $error = $_FILES['file']['error'];
+        
+        if (isset ($foto)) 
+            {
+              if (!empty($foto)) 
+              {
+                $location = 'NotePic/';
+                if  (move_uploaded_file($tmp_name, $location.$foto))
+                {
+                   
+                }
+              } 
+
+            }
       $m->save();
 		
 	}
@@ -45,6 +63,8 @@ if  (!empty($_POST))
             <label for="link">Link</label>
             <input type="text" id="link" required="required" name="link">
             <br/>
+            <input accept="image/jpeg" id="ImageSelectNote" name="file" type="file"/>
+             <br/>
             <label for="beacon">Beacon</label>
             <br/>
             <input type="text" id="beacon" required="required" name="beacon">

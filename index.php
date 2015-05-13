@@ -28,25 +28,26 @@ $all = $m->getAll();
 </div>
     
     <div class="header">
-	<a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i> Toggle Menu</a>
+	<a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i><img id="menu-togglebut" src="img/menu-toggle.png"/></a>
+            <a id="logout" href="logout.php">Logout</a>
 </div>
     
-<p> Active notifications </p>
     
   <div id="notesPrint">
 			<?php
 				foreach($all as $a) { ?>
-		    
+		          <div id="SingleNote">
 					<h4 id="titleNote"><strong><?= $a['n_title']?></strong></h4>
-					<h4><strong><?= $a['n_teaser']?></strong></h4>
+					<h4 id="teaserNote"><strong><?= $a['n_teaser']?></strong></h4>
+                 </div>
 					<div class="clear">&nbsp;</div>
 					
+
 			<?php } 
 			
 			?> </div>  
     
 
-    <a href="logout.php">Logout</a>
 </body>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">

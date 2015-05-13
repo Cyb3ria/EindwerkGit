@@ -8,6 +8,7 @@
 		private $m_sTeaser;
 		private $m_sLink;
 		private $m_sBeacon;
+		private $m_sFoto;
 
 		public function __set($p_sProperty, $p_vValue)
 			{
@@ -23,6 +24,9 @@
 						break;
 					case 'Beacon':
 						$this->m_sBeacon =$p_vValue;
+						break;
+					case 'Foto':
+						$this->m_sFoto =$p_vValue;
 						break;
 				}
 			}
@@ -43,6 +47,9 @@
 					case 'Beacon':
 						return $this->m_sBeacon;
 						break;
+					case 'Foto':
+						return $this->$m_sFoto;
+						break;
 
 				}
 			}
@@ -61,10 +68,11 @@
 			{
             
                 $conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");
-                $sql = "insert into notifications (n_title, n_teaser, n_link, n_beacon ) VALUES
+                $sql = "insert into notifications (n_title, n_teaser, n_link, n_foto, n_beacon ) VALUES
 				('". $conn->real_escape_string($this->m_sTitle) ."' ,
 				'". $conn->real_escape_string($this->m_sTeaser) ."' ,
 				'". $conn->real_escape_string($this->m_sLink) ."' ,
+				'". $conn->real_escape_string($this->m_sFoto) ."' ,
 				 '". $conn->real_escape_string($this->m_sBeacon) ."')";
 				$conn->query($sql);
 
