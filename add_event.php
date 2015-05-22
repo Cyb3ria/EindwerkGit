@@ -13,9 +13,7 @@ $uid = $_SESSION['u_id'];
 
   if(!empty($_POST))
   {
-    $titel = $_POST['titel'];
-    $teaster = $_POST['teaser'];
-    $link = $_POST['link'];
+
     
     $foto = $_FILES["file"]["name"];
     $event->Foto = $foto;
@@ -29,9 +27,14 @@ $uid = $_SESSION['u_id'];
       {
                    
       }
-    } 
-  $event->save($uid);
-    $beacon = $_POST['beacon'];
+    }
+    $event->Title = $_POST['titel'];
+    $event->Teaser = $_POST['teaser'];
+    $event->Link = $_POST['link'];
+    $event->Beacon = $_POST['beacon'];
+      
+    $event->save($uid);
+
   }
 ?>
 <!doctype html>
