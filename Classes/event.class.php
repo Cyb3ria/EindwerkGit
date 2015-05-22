@@ -64,16 +64,17 @@
 
 			}
 			
-		public function save()
+		public function save($uid)
 			{
             
                 $conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");
-                $sql = "insert into notifications (n_title, n_teaser, n_link, n_foto, n_beacon ) VALUES
+                $sql = "insert into notifications (n_title, n_teaser, n_link, n_foto, n_beacon, u_id) VALUES
 				('". $conn->real_escape_string($this->m_sTitle) ."' ,
 				'". $conn->real_escape_string($this->m_sTeaser) ."' ,
 				'". $conn->real_escape_string($this->m_sLink) ."' ,
 				'". $conn->real_escape_string($this->m_sFoto) ."' ,
-				 '". $conn->real_escape_string($this->m_sBeacon) ."')";
+				'". $conn->real_escape_string($this->m_sBeacon) ."',
+				'". $conn->real_escape_string($uid) ."')";
 				$conn->query($sql);
 
 			}

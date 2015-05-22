@@ -2,37 +2,37 @@
 session_start();
   include("config.php");
   include("Classes/event.class.php");
+  
+if(!isset($_SESSION['loggedin']))
+{
+  header('location: login.php');
+}  
+
+$event = new Event();
+$uid = $_SESSION['u_id'];
+
+  if(!empty($_POST))
+  {
+    $titel = $_POST['titel'];
+    $teaster = $_POST['teaser'];
+    $link = $_POST['link'];
     
-    $m = new Event();
-    if  (!empty($_POST))
-	{
-      $m->Title = $_POST['titel'];
-      $m->Teaser = $_POST['teaser'];
-      $m->Link = $_POST['link'];
-      $m->Beacon = $_POST['beacon']; 
-    
-      $foto = $_FILES["file"]["name"];
-      $m->Foto = $foto;
-      $tmp_name = $_FILES['file']['tmp_name'];
-      $error = $_FILES['file']['error'];
-        
-        if (isset ($foto)) 
-            {
-              if (!empty($foto)) 
-              {
-                $location = 'NotePic/';
-                if  (move_uploaded_file($tmp_name, $location.$foto))
-                {
+    $foto = $_FILES["file"]["name"];
+    $event->Foto = $foto;
+    $tmp_name = $_FILES ['file']['tmp_name'];
+    $error = $_FILES['file']['error'];
+
+    if (!empty($foto)) 
+    {
+      $location = 'noteimg/';
+      if  (move_uploaded_file($tmp_name, $location.$foto))
+      {
                    
-                }
-              } 
-
-            }
-      $m->save();
-		
-	}
-
-
+      }
+    } 
+  $event->save($uid);
+    $beacon = $_POST['beacon'];
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -52,7 +52,7 @@ session_start();
         </div>
         <!--end title-->
 
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             <?php if(isset($message)) { echo "<div id='errormessage'>" . $message . "</div>"; } ?>
             <label for="titel">Titel</label>
             <input type="text" id="titel" required="required" name="titel">
@@ -63,7 +63,7 @@ session_start();
             <label for="link">Link</label>
             <input type="text" id="link" required="required" name="link">
             <br/>
-            <input accept="image/jpeg" id="ImageSelectNote" name="file" type="file"/>
+            <input type="file" name="file" id="file" >
              <br/>
             <label for="beacon">Beacon</label>
             <br/>
