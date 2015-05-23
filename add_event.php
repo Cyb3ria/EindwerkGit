@@ -55,7 +55,7 @@ $uid = $_SESSION['u_id'];
         </div>
         <!--end title-->
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form id="addeventform" action="" method="POST" enctype="multipart/form-data">
             <?php if(isset($message)) { echo "<div id='errormessage'>" . $message . "</div>"; } ?>
             <label for="titel">Titel</label>
             <input type="text" id="titel" required="required" name="titel">
@@ -70,8 +70,13 @@ $uid = $_SESSION['u_id'];
              <br/>
             <label for="beacon">Beacon</label>
             <br/>
-            <input type="text" id="beacon" required="required" name="beacon">
-
+            <div id="beaconsdiv">
+            <input type="text" id="beacon0" required="required" name="beacon0">
+            <br/>
+            </div>
+            <div id="addbeacon">
+                <button class="btn btn-add" id="addbeaconbtn">More Beacons Nigga</button>
+            </div>
 
             <div id="submitknop">
                 <button type="submit" class="btn btn-default">add</button>
@@ -80,5 +85,6 @@ $uid = $_SESSION['u_id'];
     </div>
 
 </body>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="ajax/ajax.js"type="text/javascript"></script>
 </html>
