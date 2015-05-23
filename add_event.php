@@ -77,6 +77,18 @@ $uid = $_SESSION['u_id'];
             <div id="addbeacon">
                 <button class="btn btn-add" id="addbeaconbtn">More Beacons Nigga</button>
             </div>
+            <div id="removebeacon">
+                <button class="btn btn-remove removebeaconbtn" id="removebeaconbtn">Remove Beacon</button>
+                <style type="text/css">
+                #removebeaconbtn
+                {
+                  display: none;
+                  background-color: red;
+                }
+                </style>
+            </div>
+
+
 
             <div id="submitknop">
                 <button type="submit" class="btn btn-default">add</button>
