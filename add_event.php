@@ -43,57 +43,70 @@ $uid = $_SESSION['u_id'];
     <meta charset="UTF-8">
 
     <title>Add event</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
     <div id="container">
+<div class="slideout-menu">
+	<h3>Menu <a href="#" class="slideout-menu-toggle">&times;</a></h3>
+	<ul>
+		<li><a href="#">My notifications <i class="fa fa-angle-right"></i></a></li>
+		<li><a href="#">Starred Notifications <i class="fa fa-angle-right"></i></a></li>
+		<li><a href="#">Add Notification <i class="fa fa-angle-right"></i></a></li>
+	</ul>
+</div>
+    
+    <div class="header">
+	<a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i><img id="menu-togglebut" src="img/menu-toggle.png"/></a>
 
-        <div id="title">
-            <h1 class="page-header">James</h1>
-        </div>
-        <!--end title-->
+            <a id="logout" href="logout.php">Logout</a>
+                <a href="#" id="logoJ">James</a>
+</div>
+        
+        <h1 id="BlueTitle">Add event</h1>
+    
 
         <form id="addeventform" action="" method="POST" enctype="multipart/form-data">
             <?php if(isset($message)) { echo "<div id='errormessage'>" . $message . "</div>"; } ?>
             <label for="titel">Titel</label>
-            <input type="text" id="titel" required="required" name="titel">
-            <br/>
+            <input type="text" id="titel" required="required" name="titel" placeholder="Mijn Event">
+
             <label for="teaser">Teaser</label>
-            <textarea type="text" id="teaser" required="required" name="teaser"></textarea>
-            <br/>
+            <textarea type="text" id="teaser" required="required" name="teaser" placeholder="Mijn event ..."></textarea>
+
             <label for="link">Link</label>
-            <input type="text" id="link" required="required" name="link">
-            <br/>
+            <input type="text" id="link" required="required" name="link" placeholder="mijnevent.com/event">
+            
+            <label for="file">Foto</label>
             <input type="file" name="file" id="file" >
-             <br/>
+
             <label for="beacon">Beacon</label>
-            <br/>
+
             <div id="beaconsdiv">
-            <input type="text" id="beacon0" required="required" name="beacon0">
-            <br/>
+            <input class="beacon" type="text" id="beacon0" required="required" name="beacon0" placeholder="Beacon Refter">
+
             </div>
             <div id="addbeacon">
-                <button class="btn btn-add" id="addbeaconbtn">More Beacons Nigga</button>
+                <button class="btn btn-add" id="addbeaconbtn">Voeg een beacon toe</button>
             </div>
             <div id="removebeacon">
-                <button class="btn btn-remove removebeaconbtn" id="removebeaconbtn">Remove Beacon</button>
+                <button class="btn btn-remove removebeaconbtn" id="removebeaconbtn">Verwijder Beacon</button>
                 <style type="text/css">
-                #removebeaconbtn
-                {
-                  display: none;
-                  background-color: red;
-                }
+
                 </style>
             </div>
-            <br/>
+ 
             <label for="enddate">Eind Datum</label>
-            <br/>
+
             <input type="date" id="enddate" required="required" name="enddate">
 
 
             <div id="submitknop">
-                <button type="submit" class="btn btn-default">add</button>
+                <button type="submit" id="submitEvent" class="btn btn-default">Done</button>
             </div>
         </form>
     </div>
@@ -101,4 +114,28 @@ $uid = $_SESSION['u_id'];
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 <script src="ajax/ajax.js"type="text/javascript"></script>
+    <script type="text/javascript">
+$(document).ready(function () {
+    $('.slideout-menu-toggle').on('click', function(event){
+    	event.preventDefault();
+    	// create menu variables
+    	var slideoutMenu = $('.slideout-menu');
+    	var slideoutMenuWidth = $('.slideout-menu').width();
+    	
+    	// toggle open class
+    	slideoutMenu.toggleClass("open");
+    	
+    	// slide menu
+    	if (slideoutMenu.hasClass("open")) {
+	    	slideoutMenu.animate({
+		    	left: "0px"
+	    	});	
+    	} else {
+	    	slideoutMenu.animate({
+		    	left: -slideoutMenuWidth
+	    	}, 250);	
+    	}
+    });
+});
+</script>
 </html>

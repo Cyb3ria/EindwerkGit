@@ -21,8 +21,25 @@ $arrayNotifications = $event->getMine();
 	<link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
+    
+<div class="slideout-menu">
+	<h3>Menu <a href="#" class="slideout-menu-toggle">&times;</a></h3>
+	<ul>
+		<li><a href="#">My notifications <i class="fa fa-angle-right"></i></a></li>
+		<li><a href="#">Starred Notifications <i class="fa fa-angle-right"></i></a></li>
+		<li><a href="add_event.php">Add Notification <i class="fa fa-angle-right"></i></a></li>
+	</ul>
+</div>
+    
+    <div class="header">
+	<a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i><img id="menu-togglebut" src="img/menu-toggle.png"/></a>
+
+            <a id="logout" href="logout.php">Logout</a>
+                <a href="#" id="logoJ">James</a>
+</div>
+        
+        <h1 id="BlueTitle">Mijn event</h1>
 	
-<p> My events </p>
 
 <div id="myNotifications">
 <table id="myEventsTable">
@@ -67,8 +84,32 @@ if(isset($_POST['delete_row']))
 ?>	
 </table>
     <br />
-    <a href="indexadmin.php">Go back to admin index</a>
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 <script src="ajax/ajax.js"type="text/javascript"></script>
+    <script src="ajax/ajax.js"type="text/javascript"></script>
+    <script type="text/javascript">
+$(document).ready(function () {
+    $('.slideout-menu-toggle').on('click', function(event){
+    	event.preventDefault();
+    	// create menu variables
+    	var slideoutMenu = $('.slideout-menu');
+    	var slideoutMenuWidth = $('.slideout-menu').width();
+    	
+    	// toggle open class
+    	slideoutMenu.toggleClass("open");
+    	
+    	// slide menu
+    	if (slideoutMenu.hasClass("open")) {
+	    	slideoutMenu.animate({
+		    	left: "0px"
+	    	});	
+    	} else {
+	    	slideoutMenu.animate({
+		    	left: -slideoutMenuWidth
+	    	}, 250);	
+    	}
+    });
+});
+</script>
 </html>

@@ -32,7 +32,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body id="loginBody">
 	
 	<div id="container">
 

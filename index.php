@@ -30,8 +30,9 @@ $all = $m->getAll();
     <div class="header">
 	<a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i><img id="menu-togglebut" src="img/menu-toggle.png"/></a>
             <a id="logout" href="logout.php">Logout</a>
+                        <a href="#" id="logoJ">James</a>
 </div>
-    
+            <h1 id="BlueTitle">Mijn Events</h1>
     
   <div id="notesPrint">
 			<?php

@@ -7,7 +7,7 @@ $(document).ready(function()
 	{
 		beaconsfieldcounter ++;
     	e.preventDefault();
-        $('<p id="beaconp'+beaconsfieldcounter+'"><input type="text" required="required" id="beacon'+beaconsfieldcounter+'" name="beacon'+beaconsfieldcounter+'" ></p>').appendTo('#beaconsdiv');
+        $('<p id="beaconp'+beaconsfieldcounter+'"><input type="text" class="beacon2" required="required" id="beacon'+beaconsfieldcounter+'" name="beacon'+beaconsfieldcounter+'" ></p>').appendTo('#beaconsdiv');
         $('#removebeaconbtn').css('display', 'block');
 	});
 

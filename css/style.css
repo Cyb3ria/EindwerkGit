@@ -1,8 +1,24 @@
+@font-face {
+	font-family: 'SCRIPTBL';
+	src: url('../font/SCRIPTBL.eot');
+	src: local('SCRIPTBL'), url('../font/SCRIPTBL.woff') format('woff'), url('../font/SCRIPTBL.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_12234">Text with this font applied</p> */
+.fontsforweb_fontid_12234 {
+	font-family: 'SCRIPTBL' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */
 /* LOGIN */ 
+#loginBody
+{
+       background-color: #F26140;
+    font-family: 'Raleway', sans-serif; 
+}
 
 body
 {
-    background-color: #F26140;
+    background-color: #fff;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -90,7 +106,7 @@ padding-left: 10px;
 .header
 {
     height: 50px;
-    background-color: #3d3d3d;
+    background-color: #F26140;
 
     
     
@@ -102,6 +118,7 @@ padding-left: 10px;
     margin-right: 20px;
         text-decoration: none;
     color: white;
+    display: block;
 }
 
 #menu-togglebut
@@ -163,6 +180,98 @@ padding-left: 10px;
     display: none;
 }
 
+/*******************************ADD EVENT***************************/
+#addeventform label
+{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#addeventform
+{
+    margin-left: 25px;
+    margin-top: 30px;
+}
+
+textarea
+{
+    resize: none;
+    width: 300px;
+    height: 100px;
+}
+
+#titel, #link, .beacon, #enddate
+{
+    width: 300px;
+    height: 30px;
+}
+
+.beacon2
+{
+    width: 300px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+#removebeaconbtn
+{
+    display: none;
+        background-color: #039BA9;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    color: #fff;
+            font-family: 'Raleway';
+}
+
+#addbeaconbtn
+{
+
+    background-color: #F26140;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    color: #fff;
+        font-family: 'Raleway';
+}
+
+#file::-webkit-file-upload-button
+{
+    overflow: hidden;
+    background: #F26140;
+    color: white;
+    border: none;
+    font-family: 'Raleway';
+    cursor: pointer;
+}
+
+
+#submitEvent
+{
+    background-color: #F26140;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    margin-top: 20px;
+    color: #fff;
+            font-family: 'Raleway';
+}
+
+#submitEvent:hover
+{
+    background-color: #C64A36;
+    -webkit-transition: background-color 500ms linear;
+    -moz-transition: background-color 500ms linear;
+    -o-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+}
 /*******************************MENU********************************/
 .slideout-menu {
 	position: fixed;
@@ -224,4 +333,30 @@ padding-left: 10px;
 	top: 15px;
 	right: 10px;
 	opacity: .5;
+}
+
+#logoJ
+{
+
+    text-decoration: none;
+    color: white;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'SCRIPTBL'!important;
+    text-align: center;
+    display: block;
+    margin-top: -27px;
+    font-size: 25px;
+     
+}
+
+#BlueTitle
+{
+    background-color: #039BA9;
+    display: block;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-left: 10px;
+    color: #fff;
 }

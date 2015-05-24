@@ -91,7 +91,7 @@
                 {		 
                 $_SESSION['u_id'] = $rows['u_id'];
 				$_SESSION['loggedin'] = 1;
-				header('Location: indexadmin.php');
+				header('Location: my_events.php');
                 }
 			}
             else
