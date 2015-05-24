@@ -22,4 +22,6 @@ if(!isset($_SESSION['loggedin']))
     <br />
     <a href="logout.php">Logout</a>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="ajax/ajax.js"type="text/javascript"></script>
 </html>

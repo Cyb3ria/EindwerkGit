@@ -77,6 +77,13 @@
 				$result = $conn->query($sql);
 				return $result;
 			}
+		public function remove($removable)
+			{
+				$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
+				$sql= "DELETE * from notifications WHERE n_id ='".$removable."'";
+				$result = $conn->query($sql);
+			}
+			
 		public function save($uid)
 			{
             

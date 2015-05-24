@@ -158,8 +158,10 @@ padding-left: 10px;
     width: 75px;
     height: 50px;
 }
-
-
+.hideThis
+{
+    display: none;
+}
 
 /*******************************MENU********************************/
 .slideout-menu {
