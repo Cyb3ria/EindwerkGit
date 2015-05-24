@@ -73,14 +73,14 @@
 			{
 				$uid = $_SESSION['u_id'];
 				$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
-				$sql= "SELECT * from notifications WHERE u_id ='".$uid."'";
+				$sql= "SELECT * FROM notifications WHERE u_id ='".$uid."'";
 				$result = $conn->query($sql);
 				return $result;
 			}
 		public function remove($removable)
 			{
 				$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
-				$sql= "DELETE * from notifications WHERE n_id ='".$removable."'";
+				$sql= "DELETE FROM notifications WHERE n_id ='".$removable."'";
 				$result = $conn->query($sql);
 			}
 			

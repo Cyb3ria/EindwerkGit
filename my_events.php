@@ -36,8 +36,9 @@ $arrayNotifications = $event->getMine();
 </tr>
 
 <?php
-	
-	while ($row = mysqli_fetch_assoc($arrayNotifications))
+
+$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
+while ($row = mysqli_fetch_assoc($arrayNotifications))
 	{
 	$removable = $row['n_id'];
 	echo "<tr>";
@@ -48,9 +49,21 @@ $arrayNotifications = $event->getMine();
 	echo "<td>".$row['n_date']."</td>";
 	echo "<td class='eventsPic'><img src='noteimg/".$row['n_foto']."' /></td>";
 	echo "<td><button>Edit</button></td>";
-	echo "<td><a class='removalLink' href ='#' onclick='".$event->remove($removable)."'>Remove</td>";
+	echo "<td><form method='post'><input type='hidden' name='id_to_be_deleted'
+								   value='".$removable."' />
+   								  <input type='submit' name='delete_row' value='delete' />
+				</form></td>";
 	echo "</tr>";
 	}
+
+if(isset($_POST['delete_row'])) 
+{
+   $id = $_POST['id_to_be_deleted'];
+   if(!mysqli_query($conn, "DELETE FROM notifications WHERE n_id = $id")) 
+   {
+     echo mysqli_error($conn);
+   }
+}
 ?>	
 </table>
     <br />
