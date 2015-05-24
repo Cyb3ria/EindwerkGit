@@ -129,6 +129,38 @@ padding-left: 10px;
     margin-bottom: 1px;
 }
 
+
+
+
+/*******************************MY EVENTS********************************/
+#myEventsTable
+{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+#myEventsTable td
+{
+    width: 200px;
+
+}
+#myEventsTable tr
+
+{
+    height: 50px;
+}
+.mainCol
+{
+    font-weight: 600;
+}
+
+.eventsPic img
+{
+    width: 75px;
+    height: 50px;
+}
+
+
+
 /*******************************MENU********************************/
 .slideout-menu {
 	position: fixed;

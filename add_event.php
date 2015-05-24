@@ -6,8 +6,7 @@ session_start();
 if(!isset($_SESSION['loggedin']))
 {
   header('location: login.php');
-}  
-
+}
 $event = new Event();
 $uid = $_SESSION['u_id'];
 
@@ -31,8 +30,8 @@ $uid = $_SESSION['u_id'];
     $event->Title = $_POST['titel'];
     $event->Teaser = $_POST['teaser'];
     $event->Link = $_POST['link'];
-    $event->Beacon = $_POST['beacon'];
-      
+    $event->Beacon = $_POST['beacon0'];
+    $event->EndDate = $_POST['enddate'];
     $event->save($uid);
 
   }
@@ -87,7 +86,10 @@ $uid = $_SESSION['u_id'];
                 }
                 </style>
             </div>
-
+            <br/>
+            <label for="enddate">Eind Datum</label>
+            <br/>
+            <input type="date" id="enddate" required="required" name="enddate">
 
 
             <div id="submitknop">
