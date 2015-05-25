@@ -38,8 +38,9 @@ $all = $m->getAll();
 			<?php
 				foreach($all as $a) { ?>
 		          <div id="SingleNote">
-					<h4 id="titleNote"><strong><?= $a['n_title']?></strong></h4>
-					<h4 id="teaserNote"><strong><?= $a['n_teaser']?></strong></h4>
+                      <a href="<?= $a['n_link']?>"><h4 id="titleNote"><strong><?= $a['n_title']?></strong></h4></a>
+					<h4 id="teaserNote"><strong><?= $a['n_beacon']?></strong></h4>
+                      <h4 id="datenote"><strong><?= $a['n_date']?></strong></h4>
                  </div>
 					<div class="clear">&nbsp;</div>
 					
