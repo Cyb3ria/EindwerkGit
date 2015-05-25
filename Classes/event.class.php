@@ -77,6 +77,20 @@
 				$result = $conn->query($sql);
 				return $result;
 			}
+
+		public function getFavo()
+			{
+				$uid = $_SESSION['u_id'];
+				$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
+				$sql= "SELECT *
+					  FROM favorites JOIN notifications 
+					  ON favorites.n_id = notifications.n_id
+					  WHERE favorites.u_id ='".$uid."'";
+
+
+				$result = $conn->query($sql);
+				return $result;
+			}
 		public function remove($removable)
 			{
 				$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
