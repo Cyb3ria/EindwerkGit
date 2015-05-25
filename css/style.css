@@ -130,25 +130,40 @@ padding-left: 10px;
 
 #notesPrint
 {
-    background-color: white;
-    padding-top: 15px;
-    padding-left: 20px;
+    background-color: #F3F3F3;
+    
   
 }
 
-#teaserNote
+
+.SingleNote
 {
-    margin-bottom: 1px;
+    margin-left: 20px;
+    padding-top: 15px;
 }
 
-#SingleNote
+.lijn
 {
-    margin-bottom: 1px;
+    border-bottom: 1px solid #BFBFBF;
+    text-indent: -9999px;
 }
 
+.titleNote
+{
+    text-decoration: none;
+    color: #039BA9;
+    margin-bottom: 5px;
+}
 
+.teaserNote, .datenote
+{
+    font-size: 15px;
+}
 
-
+.teaserNote
+{
+    margin-bottom: 5px;
+}
 /*******************************MY EVENTS********************************/
 #myEventsTable
 {
