@@ -365,7 +365,15 @@ textarea
     font-size: 25px;
      
 }
-
+.favoriteFalse 
+{
+    background: url('http://imgur.com/I0EwG.png') transparent;
+    height: 48px;
+    width: 45px;
+    border: none;
+    text-indent: -99999px;
+}
+    
 #BlueTitle
 {
     background-color: #039BA9;

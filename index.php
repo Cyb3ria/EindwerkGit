@@ -75,23 +75,27 @@ if(isset($_POST['favorite_row']))
 </div>
 
 <h1 id="BlueTitle">Dashboard</h1>
-    
 
-  <div id="notesPrint">
-      
-			<?php
-				foreach($arrayAllEvents as $a) { ?>
-		          <div class="SingleNote">
-                      <a class = "titleNote" href="<?= $a['n_link']?>"><h4 class="titleNote"><?= $a['n_title']?></h4></a>
-					<h4 class="teaserNote"><?= $a['n_beacon']?></h4>
-                      <h4 class="datenote"><?= $a['n_date']?></h4>
-                 </div>
-                    <div class = "lijn">lijn</div>
-					
-
-			<?php } 
-			
-			?> </div>  
+<div id="notesPrint">
+<?php
+	foreach($arrayAllEvents as $a) 
+  { ?>
+		<div class="SingleNote">
+      <a class = "titleNote" href="<?= $a['n_link']?>"><h4 class="titleNote"><?= $a['n_title']?></h4></a>
+		  <h4 class="teaserNote"><?= $a['n_beacon']?></h4>
+      <h4 class="datenote"><?= $a['n_date']?></h4>
+      <?php
+      echo "<form method='post'>
+            <input type ='hidden' name='id_to_be_favo'
+            value='".$favoriteID."' />
+            <input type='submit' class='favoriteFalse' id='FavoBtn' name='favorite_row' value='favorite' />
+            </form>"
+      ?>
+    </div>
+    <div class = "lijn">lijn</div>
+	<?php 
+  }?> 
+</div>  
     
 
 </body>
