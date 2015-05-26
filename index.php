@@ -89,7 +89,10 @@ if(isset($_POST['favorite_row']))
             <input type ='hidden' name='id_to_be_favo'
             value='".$favoriteID."' />
             <input type='submit' class='favoriteFalse' id='FavoBtn' name='favorite_row' value='favorite' />
-            </form>"
+            </form>
+            <div class='clearfix'> </div>"
+      
+            
       ?>
     </div>
     <div class = "lijn">lijn</div>

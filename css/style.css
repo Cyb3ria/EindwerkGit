@@ -90,13 +90,14 @@ padding-left: 10px;
     color: white;
     font-family: 'Raleway', sans-serif;
     margin-top: 20px;
+    cursor: pointer;
 
 }
-
 .page-header
 {
+    font-family: 'SCRIPTBL';
     color: white;
-    font-size: 60px;
+    font-size: 70px;
     text-align: center;
     margin-top: 100px;
     margin-bottom: 120px;
@@ -367,11 +368,15 @@ textarea
 }
 .favoriteFalse 
 {
-    background: url('http://imgur.com/I0EwG.png') transparent;
-    height: 48px;
-    width: 45px;
+    background-image: url('../img/star.png');
+    height: 40px!important;
+    width: 40px!important;
     border: none;
     text-indent: -99999px;
+    cursor: pointer;
+    float: right;
+    margin-top: -50px;
+    margin-right: 16px;
 }
     
 #BlueTitle
@@ -380,6 +385,11 @@ textarea
     display: block;
     padding-bottom: 7px;
     padding-top: 7px;
-    padding-left: 10px;
+    padding-left: 20px;
     color: #fff;
+}
+
+.clearfix
+{
+    clear: both;
 }
