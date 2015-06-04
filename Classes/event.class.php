@@ -1,5 +1,5 @@
 <?php
-	include_once("Classes/db.class.php");
+	include_once("classes/db.class.php");
 
 	class Event
 	{
@@ -61,47 +61,46 @@
         
         public function getAll()
 			{
-				$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
+		 	    $db = new db();
 				$sql="SELECT * from notifications";
-				$result = $conn->query($sql);
-				
+		     	$result = $db->conn->query($sql);
 				return $result;
-
 			}
 
 		public function getMine()
 			{
 				$uid = $_SESSION['u_id'];
-				$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
+		     	$db = new db();
 				$sql= "SELECT * FROM notifications WHERE u_id ='".$uid."'";
-				$result = $conn->query($sql);
+		     	$result = $db->conn->query($sql);
 				return $result;
 			}
 
 		public function getFavo()
 			{
 				$uid = $_SESSION['u_id'];
-				$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
+		     	$db = new db();
+
 				$sql= "SELECT *
 					  FROM favorites JOIN notifications 
 					  ON favorites.n_id = notifications.n_id
 					  WHERE favorites.u_id ='".$uid."'";
 
-
-				$result = $conn->query($sql);
+		     	$result = $db->conn->query($sql);
 				return $result;
 			}
 		public function remove($removable)
 			{
-				$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
+		 	    $db = new db();
 				$sql= "DELETE FROM notifications WHERE n_id ='".$removable."'";
 				$result = $conn->query($sql);
+				return $result;
 			}
 			
 		public function save($uid)
 			{
             
-                $conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");
+		 	    $db = new db();
                 $sql = "INSERT into notifications (n_title, n_teaser, n_link, n_foto, n_beacon, n_date, u_id) VALUES
 				('". $conn->real_escape_string($this->m_sTitle) ."' ,
 				'". $conn->real_escape_string($this->m_sTeaser) ."' ,
@@ -110,10 +109,9 @@
 				'". $conn->real_escape_string($this->m_sBeacon) ."',
 				'". $conn->real_escape_string($this->m_sEndDate) ."',
 				'". $conn->real_escape_string($uid) ."')";
-				$conn->query($sql);
+		 	    $result = $db->conn->query($sql);
+				return $result;
 
 			}
-
-
 	}
 ?>

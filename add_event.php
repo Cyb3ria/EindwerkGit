@@ -1,7 +1,6 @@
 <?php
 session_start();
-  include("config.php");
-  include("Classes/event.class.php");
+  include("classes/event.class.php");
   
 if(!isset($_SESSION['loggedin']))
 {
@@ -81,7 +80,7 @@ $uid = $_SESSION['u_id'];
             <label for="link">Link</label>
             <input type="text" id="link" required="required" name="link" placeholder="mijnevent.com/event">
             
-            <label for="file">Foto</label>
+            <label for="file">Picture</label>
             <input type="file" name="file" id="file" >
 
             <label for="beacon">Beacon</label>
@@ -91,16 +90,16 @@ $uid = $_SESSION['u_id'];
 
             </div>
             <div id="addbeacon">
-                <button class="btn btn-add" id="addbeaconbtn">Voeg een beacon toe</button>
+                <button class="btn btn-add" id="addbeaconbtn">Add Beacon</button>
             </div>
             <div id="removebeacon">
-                <button class="btn btn-remove removebeaconbtn" id="removebeaconbtn">Verwijder Beacon</button>
+                <button class="btn btn-remove removebeaconbtn" id="removebeaconbtn">Delete Beacon</button>
                 <style type="text/css">
 
                 </style>
             </div>
  
-            <label for="enddate">Eind Datum</label>
+            <label for="enddate">End Date</label>
 
             <input type="date" id="enddate" required="required" name="enddate">
 
@@ -113,29 +112,6 @@ $uid = $_SESSION['u_id'];
 
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-<script src="ajax/ajax.js"type="text/javascript"></script>
-    <script type="text/javascript">
-$(document).ready(function () {
-    $('.slideout-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideoutMenu = $('.slideout-menu');
-    	var slideoutMenuWidth = $('.slideout-menu').width();
-    	
-    	// toggle open class
-    	slideoutMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideoutMenu.hasClass("open")) {
-	    	slideoutMenu.animate({
-		    	left: "0px"
-	    	});	
-    	} else {
-	    	slideoutMenu.animate({
-		    	left: -slideoutMenuWidth
-	    	}, 250);	
-    	}
-    });
-});
-</script>
+<script src="ajax/ajax.js" type="text/javascript"></script>
+<script src="js/menu.js" type="text/javascript"></script>
 </html>

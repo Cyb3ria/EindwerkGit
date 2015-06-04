@@ -1,7 +1,6 @@
 <?php
 session_start();
-include("config.php");
-include("Classes/event.class.php");
+include("classes/event.class.php");
 
 if(!isset($_SESSION['loggedin']))
 {
@@ -38,7 +37,7 @@ $arrayNotifications = $event->getMine();
                 <a href="#" id="logoJ">James</a>
 </div>
         
-        <h1 id="BlueTitle">Mijn event</h1>
+        <h1 id="BlueTitle">My Events</h1>
 	
 
 <div id="myNotifications">
@@ -54,7 +53,7 @@ $arrayNotifications = $event->getMine();
 
 <?php
 
-$conn = new mysqli("localhost", "root", "azerty", "eindwerk_db");	
+$db = new db();	
 while ($row = mysqli_fetch_assoc($arrayNotifications))
 	{
 	$removable = $row['n_id'];
@@ -76,9 +75,9 @@ while ($row = mysqli_fetch_assoc($arrayNotifications))
 if(isset($_POST['delete_row'])) 
 {
    $id = $_POST['id_to_be_deleted'];
-   if(!mysqli_query($conn, "DELETE FROM notifications WHERE n_id = $id"))
+   if(!mysqli_query($db->conn, "DELETE FROM notifications WHERE n_id = $id"))
    {
-     echo mysqli_error($conn);
+     echo mysqli_error($db->conn);
    }
 }
 ?>	
@@ -86,30 +85,7 @@ if(isset($_POST['delete_row']))
     <br />
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-<script src="ajax/ajax.js"type="text/javascript"></script>
-    <script src="ajax/ajax.js"type="text/javascript"></script>
-    <script type="text/javascript">
-$(document).ready(function () {
-    $('.slideout-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideoutMenu = $('.slideout-menu');
-    	var slideoutMenuWidth = $('.slideout-menu').width();
-    	
-    	// toggle open class
-    	slideoutMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideoutMenu.hasClass("open")) {
-	    	slideoutMenu.animate({
-		    	left: "0px"
-	    	});	
-    	} else {
-	    	slideoutMenu.animate({
-		    	left: -slideoutMenuWidth
-	    	}, 250);	
-    	}
-    });
-});
-</script>
+<script src="ajax/ajax.js" type="text/javascript"></script>
+<script src="js/menu.js" type="text/javascript"></script>
+
 </html>
