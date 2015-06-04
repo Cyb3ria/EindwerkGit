@@ -28,6 +28,17 @@ session_start();
 	<meta charset="UTF-8">
 	
 	<title>Login</title>
+    
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+    <meta name="description" content="" />
+
+    <meta name="keywords" content="" />
+    <meta name="author" content="Joren Polfliet & Nicolas Decroos">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
