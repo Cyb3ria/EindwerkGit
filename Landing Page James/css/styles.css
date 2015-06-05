@@ -977,12 +977,23 @@ footer {
 	padding: 7px 12px;
 	font-size: 14px;
 }
+    .banner-container{
+    background: #F26140;
+}
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
 	border-color: #A8A8A8;
 }
-;
+        .features .features-left{
+    text-align: center;
 }
+            .features .features-right{
+    text-align: center;
+}
+    #portfolio .items li {
+	width: 24.5%;
 
+}
+;
 @media (max-width: 480px) {
 .banner-container {
 	background-size: contain;
@@ -1051,6 +1062,9 @@ footer {
 .banner-container{
     background: #F26140;
 }
+    #portfolio .items li {
+	width: 50%;
+}
 ;
 }
 
@@ -1058,6 +1072,10 @@ footer {
 .banner-container {
 	background-size: contain;
 }
+    .featuredImg
+    {
+        display: none;
+    }
 .da-slider {
 	height: 300px;
 }
@@ -1083,6 +1101,9 @@ footer {
 	font-weight: normal;
 	font-size: 10px;
 	margin: 10px 0 0 0;
+}
+    #portfolio .items li {
+	width: 50%;
 }
 nav#filter li {
 	display: inline-block;
