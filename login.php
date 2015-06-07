@@ -45,7 +45,7 @@ session_start();
 </head>
 <body id="loginBody">
 	
-	<div id="container">
+	<div id="containerlogin">
 
 	<div id="title">
 		<h1 class="page-header">James</h1>

@@ -985,10 +985,17 @@ footer {
 }
         .features .features-left{
     text-align: center;
+<<<<<<< HEAD
 }
             .features .features-right{
     text-align: center;
 }
+=======
+}
+            .features .features-right{
+    text-align: center;
+}
+>>>>>>> origin/master
     #portfolio .items li {
 	width: 24.5%;
 
@@ -997,7 +1004,7 @@ footer {
 @media (max-width: 480px) {
 .banner-container {
 	background-size: contain;
-	height:500px;
+	height:4500px;
 }
 .banner-container > img {
 	width: 100%;
@@ -1057,7 +1064,10 @@ footer {
 	font-size: 11px;
 }
     .features .features-left{
-    text-align: left;
+    text-align: center;
+}
+    .features .features-right{
+    text-align: center;
 }
 .banner-container{
     background: #F26140;
@@ -1110,7 +1120,10 @@ nav#filter li {
 	margin: 0 0 23px 5px;
 }
 .features .features-left{
-    text-align: left;
+    text-align: center;
+}
+    .features .features-right{
+    text-align: center;
 }
 ;
 }

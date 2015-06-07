@@ -10,10 +10,16 @@
 
 /* Font downloaded from FontsForWeb.com */
 /* LOGIN */ 
+#containerlogin
+{
+    margin-top: 15%
+}
+
 #loginBody
 {
-       background-color: #F26140;
-    font-family: 'Raleway', sans-serif; 
+    background-color: #F26140;
+    font-family: 'Raleway', sans-serif;
+    position: relative
 }
 
 body
@@ -25,10 +31,9 @@ body
 #bgcolorlogin
 {
     background-color: #EEEEEE;
-    width: 300px;
+    width: 280px;
     height: 105px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     padding-top: 10px;
 }
 
@@ -58,6 +63,7 @@ input{
     background-color: white!important;
     font-family: 'Raleway';
     font-size: 18px;
+    padding-left: 10px;
     
 }
 
@@ -79,7 +85,7 @@ padding-left: 10px;
 
 #submitlogin
 {
-    width: 300px;
+    width: 280px;
     height: 50px;
     display: block;
     margin-left: auto;
@@ -99,8 +105,8 @@ padding-left: 10px;
     color: white;
     font-size: 70px;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 120px;
+    margin-bottom: 50px;
+
 }
 
 /*******************************Index*******************************/
