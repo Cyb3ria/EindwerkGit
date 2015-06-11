@@ -102,13 +102,13 @@
             
 		 	    $db = new db();
                 $sql = "INSERT into notifications (n_title, n_teaser, n_link, n_foto, n_beacon, n_date, u_id) VALUES
-				('". $conn->real_escape_string($this->m_sTitle) ."' ,
-				'". $conn->real_escape_string($this->m_sTeaser) ."' ,
-				'". $conn->real_escape_string($this->m_sLink) ."' ,
-				'". $conn->real_escape_string($this->m_sFoto) ."' ,
-				'". $conn->real_escape_string($this->m_sBeacon) ."',
-				'". $conn->real_escape_string($this->m_sEndDate) ."',
-				'". $conn->real_escape_string($uid) ."')";
+				('".$db->conn->real_escape_string($this->m_sTitle) ."' ,
+				'". $db->conn->real_escape_string($this->m_sTeaser) ."' ,
+				'". $db->conn->real_escape_string($this->m_sLink) ."' ,
+				'". $db->conn->real_escape_string($this->m_sFoto) ."' ,
+				'". $db->conn->real_escape_string($this->m_sBeacon) ."',
+				'". $db->conn->real_escape_string($this->m_sEndDate) ."',
+				'". $db->conn->real_escape_string($uid) ."')";
 		 	    $result = $db->conn->query($sql);
 				return $result;
 
