@@ -70,7 +70,7 @@ if(isset($_POST['favorite_row']))
 </head>
 <body>
 <div class="slideout-menu">
-	<h3>Menu <a href="#" class="slideout-menu-toggle">&times;</a></h3>
+	<h3>James <a href="#" class="slideout-menu-toggle">&times;</a></h3>
 	<ul>
 		<li><a href="#">Home <i class="fa fa-angle-right"></i></a></li>
 		<li><a href="#">Starred Notifications <i class="fa fa-angle-right"></i></a></li>
