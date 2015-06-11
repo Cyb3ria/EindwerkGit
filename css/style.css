@@ -12,14 +12,25 @@
 /* LOGIN */ 
 #containerlogin
 {
-    margin-top: 15%
+    width: 280px;
+    position: absolute;
+    height: 305px;
+    top: 50%;
+    left: 50%;
+    margin-left: -140px;
+    margin-top: -170px;
+
+    
 }
 
 #loginBody
 {
     background-color: #F26140;
     font-family: 'Raleway', sans-serif;
-    position: relative
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 body
@@ -105,9 +116,9 @@ padding-left: 10px;
 {
     font-family: 'SCRIPTBL';
     color: white;
-    font-size: 70px;
+    font-size: 90px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
 }
 
