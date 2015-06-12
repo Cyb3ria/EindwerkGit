@@ -92,7 +92,15 @@ if(isset($_POST['favorite_row']))
 	foreach($arrayAllEvents as $a) 
   { ?>
 		<div class="SingleNote">
-      <a class = "titleNote" href="<?= $a['n_link']?>"><h4 class="titleNote"><?= $a['n_title']?></h4></a>
+      <a class = "titleNote" 
+         
+         data-title="<?= $a['n_title'];?>" 
+         data-beacon="<?= $a['n_beacon'];?>" 
+         data-teaser="<?= $a['n_teaser'];?>" 
+         data-link="<?= $a['n_link'];?>" 
+         data-date="<?= $a['n_date'];?>" 
+         
+         href="#"><h4 class="titleNote"><?= $a['n_title']?></h4></a>
 		  <h4 class="teaserNote"><?= $a['n_beacon']?></h4>
       <h4 class="datenote"><?= $a['n_date']?></h4>
       <?php
@@ -116,4 +124,5 @@ if(isset($_POST['favorite_row']))
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
     <script src="js/menu.js" type="text/javascript"></script>
+    <script src="js/jquery.js" type="text/javascript"></script>
 </html>
