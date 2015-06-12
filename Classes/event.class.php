@@ -8,7 +8,6 @@
 		private $m_sTeaser;
 		private $m_sLink;
 		private $m_sBeacon;
-		private $m_sFoto;
 		private $m_sEndDate;
 
 		public function __set($p_sProperty, $p_vValue)
@@ -50,9 +49,6 @@
 					case 'Beacon':
 						return $this->m_sBeacon;
 						break;
-					case 'Foto':
-						return $this->$m_sFoto;
-						break;
 					case 'EndDate':
 						return $this->m_sEndDate;
 
@@ -93,19 +89,24 @@
 			{
 		 	    $db = new db();
 				$sql= "DELETE FROM notifications WHERE n_id ='".$removable."'";
-				$result = $conn->query($sql);
+				$result = $db->conn->query($sql);
 				return $result;
 			}
-			
+		public function broadcast()
+			{
+				$db = new db();
+				$sql = "UPDATE notifications SET n_broadcast ='0' WHERE n_beacon ='".$this->m_sBeacon."' AND n_broadcast='1'";
+				$result = $db->conn->query($sql);
+				return $result;
+			}	
 		public function save($uid)
 			{
             
 		 	    $db = new db();
-                $sql = "INSERT into notifications (n_title, n_teaser, n_link, n_foto, n_beacon, n_date, u_id) VALUES
+                $sql = "INSERT into notifications (n_title, n_teaser, n_link, n_beacon, n_date, u_id) VALUES
 				('".$db->conn->real_escape_string($this->m_sTitle) ."' ,
 				'". $db->conn->real_escape_string($this->m_sTeaser) ."' ,
 				'". $db->conn->real_escape_string($this->m_sLink) ."' ,
-				'". $db->conn->real_escape_string($this->m_sFoto) ."' ,
 				'". $db->conn->real_escape_string($this->m_sBeacon) ."',
 				'". $db->conn->real_escape_string($this->m_sEndDate) ."',
 				'". $db->conn->real_escape_string($uid) ."')";

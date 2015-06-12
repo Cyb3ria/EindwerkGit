@@ -11,26 +11,12 @@ $uid = $_SESSION['u_id'];
 
   if(!empty($_POST))
   {
-
-    
-    $foto = $_FILES["file"]["name"];
-    $event->Foto = $foto;
-    $tmp_name = $_FILES ['file']['tmp_name'];
-    $error = $_FILES['file']['error'];
-
-    if (!empty($foto)) 
-    {
-      $location = 'noteimg/';
-      if  (move_uploaded_file($tmp_name, $location.$foto))
-      {
-                   
-      }
-    }
     $event->Title = $_POST['titel'];
     $event->Teaser = $_POST['teaser'];
     $event->Link = $_POST['link'];
     $event->Beacon = $_POST['beacon0'];
     $event->EndDate = $_POST['enddate'];
+    $event->broadcast();
     $event->save($uid);
 
   }
@@ -86,35 +72,45 @@ $uid = $_SESSION['u_id'];
             <label for="titel">Titel</label>
             <input type="text" id="titel" required="required" name="titel" placeholder="Mijn Event">
 
-            <label for="teaser">Teaser</label>
+            <label for="teaser">Event Info</label>
             <textarea type="text" id="teaser" required="required" name="teaser" placeholder="Mijn event ..."></textarea>
 
-            <label for="link">Link</label>
+            <label for="link">Event Link</label>
             <input type="text" id="link" required="required" name="link" placeholder="mijnevent.com/event">
-            
-            <label for="file">Picture</label>
-            <input type="file" name="file" id="file" >
 
-            <label for="beacon">Beacon</label>
+            <label for="beacon">Zone</label>
 
             <div id="beaconsdiv">
-            <input class="beacon" type="text" id="beacon0" required="required" name="beacon0" placeholder="Beacon Refter">
-
+                <select id="beacon0" name="beacon0" required="required">
+                    <option class="main-item" value="Campus KruidTuin">Campus Kruidtuin</option>
+                    <option class="sub-item" value="Creativity Gym">Creativity Gym</option>
+                    <option class="sub-item" value="Bibliotheek">Bibliotheek</option>
+                    <option class="sub-item" value="Cafetaria">Cafetaria</option>
+                    <option class="main-item" value="Campus De Vest">Campus De Vest</option>
+                    <option class="sub-item" value="International Office<">International Office</option>
+                    <option class="sub-item" value="Cafetaria">Cafetaria</option>
+                </select>
+            <div id="BC" style="display: none;">    
+            <p id="curBC">
+            Currently being broadcasted at <span id="zoneBC"></span>
+            </p>
+            <table id="BCtable">
+            <tr class="mainRow">
+                <td class="mainCol-Add">Event Title</td>
+                <td class="mainCol-Add">Event Link</td>        
+                <td class="mainCol-Add">Event Date</td>
+                <td class="mainCol-Add">Created by</td>
+            </tr>
+            </table>
             </div>
-            <div id="addbeacon">
-                <button class="btn btn-add" id="addbeaconbtn">Add Beacon</button>
             </div>
-            <div id="removebeacon">
-                <button class="btn btn-remove removebeaconbtn" id="removebeaconbtn">Delete Beacon</button>
-                <style type="text/css">
 
                 </style>
             </div>
- 
+            
             <label for="enddate">End Date</label>
-
+            <br />
             <input type="date" id="enddate" required="required" name="enddate">
-
 
             <div id="submitknop">
                 <button type="submit" id="submitEvent" class="btn btn-default">Done</button>
@@ -126,6 +122,7 @@ $uid = $_SESSION['u_id'];
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 <script src="ajax/ajax.js" type="text/javascript"></script>
 <script src="js/menu.js" type="text/javascript"></script>
+<script src="js/script.js" type="text/javascript"></script>
 <script type="text/javascript">
 var today = new Date();
 var dd = today.getDate();
