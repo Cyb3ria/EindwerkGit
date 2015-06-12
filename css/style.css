@@ -448,3 +448,41 @@ textarea
 {
     color: white;
 }
+
+#eventTitel
+{
+    margin-left: 20px; 
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+#atLoc
+{
+    margin-left: 20px;
+    font-size: 15px;
+    margin-top: 10px;
+    color: #039BA9;
+    font-weight: bold;
+}
+
+#eventText
+{
+    margin-left: 20px;
+    margin-top: 30px;
+    font-size: 17px;
+    width: 85%;
+    line-height: 25px;
+}
+
+#eventLink
+{
+    text-decoration: none;
+    background-color: #F26140;
+    margin-left: 20px;
+    margin-top: 30px;
+    display: block;
+    width: 150px;
+    text-align: center;
+    padding: 10px 0;
+    color: white;
+}

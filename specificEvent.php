@@ -52,11 +52,11 @@ if(!isset($_SESSION['loggedin']))
     
     <div id="Spcontent">
     
-        <h1><?= $_SESSION['n_title']; ?></h1>
-        <h1><?= $_SESSION['n_beacon']; ?></h1>
-        <h1><?= $_SESSION['n_teaser']; ?></h1>
-        <h1><?= $_SESSION['n_link']; ?></h1>
-        <h1><?= $_SESSION['n_date']; ?></h1>
+        <h1 id="eventTitel"><?= $_SESSION['n_title']; ?></h1>
+        <h2 id="atLoc">&#64;<?= $_SESSION['n_beacon']; ?> // <?= $_SESSION['n_date']; ?></h2>
+        <p id="eventText"><?= $_SESSION['n_teaser']; ?></p>
+        <a id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>
+
         
     </div>
     </wrapper>

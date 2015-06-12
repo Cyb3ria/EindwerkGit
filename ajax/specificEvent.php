@@ -3,8 +3,6 @@
 session_start();
 include_once("class/event.class.php");
 
-
-
 $_SESSION['n_title']=$_POST['title'];
 $_SESSION['n_beacon']=$_POST['beacon'];
 $_SESSION['n_teaser']=$_POST['teaser'];
