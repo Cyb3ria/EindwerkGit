@@ -82,13 +82,20 @@ $uid = $_SESSION['u_id'];
 
             <div id="beaconsdiv">
                 <select id="beacon0" name="beacon0" required="required">
-                    <option class="main-item" value="Campus KruidTuin">Campus Kruidtuin</option>
+
+                    <optgroup label="Campus Kruidtuin">
+                    <option class="sub-item" value="Campus Kruidtuin">Campus Kruidtuin</option>
                     <option class="sub-item" value="Creativity Gym">Creativity Gym</option>
+                    <option class="sub-item" value="STIP">STIP</option>
                     <option class="sub-item" value="Bibliotheek">Bibliotheek</option>
                     <option class="sub-item" value="Cafetaria">Cafetaria</option>
-                    <option class="main-item" value="Campus De Vest">Campus De Vest</option>
+                    </optgroup>
+
+                    <optgroup label="Campus De Vest">
+                    <option class="sub-item" value="Campus De Vest">Campus De Vest</option>
                     <option class="sub-item" value="International Office<">International Office</option>
                     <option class="sub-item" value="Cafetaria">Cafetaria</option>
+                    </optgroup>
                 </select>
             <div id="BC" style="display: none;">    
             <p id="curBC">
