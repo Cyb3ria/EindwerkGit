@@ -8,9 +8,8 @@ session_start();
     }
 
     $session = $_SESSION['n_beacon'];
-    $sessionSt = (string)$session;
 
-if($sessionSt == 'Creativity Gym')
+if($session == 'Creativity Gym')
 {
     echo "<style type='text/css'>
     #SpecWrap
@@ -18,9 +17,67 @@ if($sessionSt == 'Creativity Gym')
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/gym.jpg);
     }</style>";
 }
-else if ($session === 'Campus KruidTuin')
+else if ($session == 'Campus KruidTuin')
 {
-    echo "<style type='text/css'>#SpecWrap{background: white;}</style>";
+    echo "<style type='text/css'>
+    #SpecWrap
+    {    
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/kruidtuin.jpg);
+    }</style>";
+}
+
+else if ($session == 'STIP')
+{
+    echo "<style type='text/css'>
+    #SpecWrap
+    {    
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/stip.jpg);
+    }</style>";
+}
+
+else if ($session == 'Bibliotheek')
+{
+    echo "<style type='text/css'>
+    #SpecWrap
+    {    
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/bibl.jpg);
+    }</style>";
+}
+
+else if ($session == 'Cafetaria KruidTuin')
+{
+    echo "<style type='text/css'>
+    #SpecWrap
+    {    
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/refterKT.jpg);
+    }</style>";
+}
+
+else if ($session == 'Campus De Vest')
+{
+    echo "<style type='text/css'>
+    #SpecWrap
+    {    
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/vest.jpg);
+    }</style>";
+}
+
+else if ($session == 'International Office<')
+{
+    echo "<style type='text/css'>
+    #SpecWrap
+    {    
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/InterOf.jpg);
+    }</style>";
+}
+
+else if ($session == 'Cafetaria De Vest')
+{
+    echo "<style type='text/css'>
+    #SpecWrap
+    {    
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/cafDV.jpg);
+    }</style>";
 }
 
 
