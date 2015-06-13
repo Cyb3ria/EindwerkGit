@@ -1,26 +1,24 @@
 <?php
 session_start();
-include("classes/event.class.php");
+    include("classes/event.class.php");
 
-$session = $_SESSION['n_beacon'];
-$sessionSt = (string)$session;
-echo $session;
+    if(!isset($_SESSION['loggedin']))
+    {
+        header('location: login.php');
+    }
 
-if(!isset($_SESSION['loggedin']))
-{
-  header('location: login.php');
-}
+    $session = $_SESSION['n_beacon'];
+    $sessionSt = (string)$session;
 
-if($sessionSt == 'Creavity Gym')
+if($sessionSt == 'Creativity Gym')
 {
     echo "<style type='text/css'>
     #SpecWrap
     {    
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/gym.jpg);
     }</style>";
-    echo "test";
-
-}else if ($session === 'Campus KruidTuin')
+}
+else if ($session === 'Campus KruidTuin')
 {
     echo "<style type='text/css'>#SpecWrap{background: white;}</style>";
 }
