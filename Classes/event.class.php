@@ -85,6 +85,15 @@
 		     	$result = $db->conn->query($sql);
 				return $result;
 			}
+
+		public function getBeaconEvent($ZoneName)
+			{
+				$db = new db();
+				$sql = "SELECT * FROM notifications WHERE n_beacon ='".$ZoneName."' AND n_broadcast='1'";
+				$result = $db->conn->query($sql);
+				return $result;
+			}
+
 		public function remove($removable)
 			{
 		 	    $db = new db();

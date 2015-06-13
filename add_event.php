@@ -81,7 +81,8 @@ $uid = $_SESSION['u_id'];
             <label for="beacon">Zone</label>
 
             <div id="beaconsdiv">
-                <select id="beacon0" name="beacon0" required="required">
+                
+                <select id="beacon0" name="beacon0" required="required" selected="Pick A Zone">
 
                     <optgroup label="Campus Kruidtuin">
                     <option class="sub-item" value="Campus Kruidtuin">Campus Kruidtuin</option>
@@ -97,6 +98,7 @@ $uid = $_SESSION['u_id'];
                     <option class="sub-item" value="Cafetaria">Cafetaria</option>
                     </optgroup>
                 </select>
+
             <div id="BC" style="display: none;">    
             <p id="curBC">
             Currently being broadcasted at <span id="zoneBC"></span>
@@ -109,6 +111,8 @@ $uid = $_SESSION['u_id'];
                 <td class="mainCol-Add">Created by</td>
             </tr>
             </table>
+            <?php
+            ?>
             </div>
             </div>
 
