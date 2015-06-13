@@ -2,10 +2,29 @@
 session_start();
 include("classes/event.class.php");
 
+$session = $_SESSION['n_beacon'];
+$sessionSt = (string)$session;
+echo $session;
+
 if(!isset($_SESSION['loggedin']))
 {
   header('location: login.php');
 }
+
+if($sessionSt == 'Creavity Gym')
+{
+    echo "<style type='text/css'>
+    #SpecWrap
+    {    
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/gym.jpg);
+    }</style>";
+    echo "test";
+
+}else if ($session === 'Campus KruidTuin')
+{
+    echo "<style type='text/css'>#SpecWrap{background: white;}</style>";
+}
+
 
 ?>
 
@@ -17,6 +36,7 @@ if(!isset($_SESSION['loggedin']))
     	<title>James | My Events</title>
     
             <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <link rel="icon" href="img/JamesIcon.ico" type="image/ico" />
 
     <meta name="description" content="" />
 
@@ -48,7 +68,7 @@ if(!isset($_SESSION['loggedin']))
                 <a href="#" id="logoJ">James</a>
 </div>
         
-        <h1 id="BlueTitle"><?= $_SESSION['n_title']; ?></h1>
+        <h1 id="BlueTitle">Event Info</h1>
     
     <div id="Spcontent">
     
@@ -56,6 +76,7 @@ if(!isset($_SESSION['loggedin']))
         <h2 id="atLoc">&#64;<?= $_SESSION['n_beacon']; ?> // <?= $_SESSION['n_date']; ?></h2>
         <p id="eventText"><?= $_SESSION['n_teaser']; ?></p>
         <a id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>
+
 
         
     </div>
