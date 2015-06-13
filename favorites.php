@@ -2,41 +2,23 @@
 session_start();
   include("classes/event.class.php");
 
-$m = new Event();
-$arrayAllEvents = $m->getAll();
-$arrayFavorites = $m->getFavo();
+$event = new Event();
+$db = new db();
+$arrayFavo= $event->getFavo();
 
 if(!isset($_SESSION['loggedin']))
 {
   header('location: login.php');
 }
 
-  $db = new db();
-  
-  while ($row = mysqli_fetch_assoc($arrayFavorites))
-  {
-  $unfavoriteID = $row['f_id'];
-  $uid = $_SESSION['u_id'];
-  }
-
-  while ($row = mysqli_fetch_assoc($arrayAllEvents))
-  {
-  $uid = $_SESSION['u_id'];
-  }
-
-if(isset($_POST['favorite_row'])) 
+if(isset($_POST['Unfavorite_row'])) 
 {
-   $Fid = $_POST['id_to_be_favo'];
-   if(!mysqli_query($db->conn, "INSERT INTO favorites (u_id, n_id, f_boolean) VALUES
-        ('". $db->conn->real_escape_string($uid) ."' ,
-        '". $db->conn->real_escape_string($Fid) ."' ,
-        '". $db->conn->real_escape_string("1") ."')"))
-   {
-     echo mysqli_error($db->conn);
-   }
-}					
-
-
+	$unFid = $_POST['id_to_be_unfavo'];
+    if(!mysqli_query($db->conn, "DELETE FROM favorites WHERE f_id ='".$unFid."'"))
+    {
+      echo mysqli_error($db);
+    }
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -80,9 +62,10 @@ if(isset($_POST['favorite_row']))
 
 <div id="notesPrint">
 <?php
-	foreach($arrayAllEvents as $a) 
-  {?>
-		<div class="SingleNote">
+	foreach($arrayFavo as $a) 
+  	{
+?>
+	<div class="SingleNote">
       <a class = "titleNote" 
          
          data-title="<?= $a['n_title'];?>" 
@@ -96,11 +79,11 @@ if(isset($_POST['favorite_row']))
       </a>
 		  <h4 class="teaserNote"><?= $a['n_teaser']?></h4>
       <h4 class="datenote"><?= $a['n_date']?></h4>
-  <?php
+<?php
     echo "<form method='post'>
-          <input type ='hidden' name='id_to_be_favo'
-          value='".$a['n_id']."' />
-          <input type='submit' class='favoriteFalse' id='FavoBtn' name='favorite_row' value='favorite' />
+          <input type ='hidden' name='id_to_be_unfavo'
+          value='".$a['f_id']."' />
+          <input type='submit' class='favoriteTrue' id='UnFavoBtn' name='Unfavorite_row' value='unfavorite' />
           </form>
           
           <div class='clearfix'> </div>";       

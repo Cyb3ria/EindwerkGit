@@ -78,8 +78,8 @@
 		     	$db = new db();
 
 				$sql= "SELECT *
-					  FROM favorites JOIN notifications 
-					  ON favorites.n_id = notifications.n_id
+					  FROM notifications JOIN favorites 
+					  ON notifications.n_id = favorites.n_id
 					  WHERE favorites.u_id ='".$uid."'";
 
 		     	$result = $db->conn->query($sql);

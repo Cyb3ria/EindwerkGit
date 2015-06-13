@@ -402,9 +402,23 @@ textarea
     font-size: 25px;
      
 }
+
 .favoriteFalse 
 {
     background-image: url('../img/star.png');
+    height: 40px!important;
+    width: 40px!important;
+    border: none;
+    text-indent: -99999px;
+    cursor: pointer;
+    float: right;
+    margin-top: -50px;
+    margin-right: 16px;
+}
+
+.favoriteTrue 
+{
+    background-image: url('../img/starselected.png');
     height: 40px!important;
     width: 40px!important;
     border: none;
