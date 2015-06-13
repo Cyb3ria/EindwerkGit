@@ -34,6 +34,7 @@ if(isset($_POST['delete_row']))
     	<title>James | My Events</title>
     
             <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+            <link rel="icon" href="img/JamesIcon.ico" type="image/ico" />
 
     <meta name="description" content="" />
 
