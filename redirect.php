@@ -20,5 +20,5 @@
     $eventPage = urlencode($row['n_beacon']);
 	}
 
-	header('location:event.php?n_beacon='.$eventPage.'');
+	header("location:event.php?n_beacon=".$eventPage."");
 ?>

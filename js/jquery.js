@@ -12,7 +12,7 @@ $(document).ready(function()
 
 		var request = $.ajax
 		({
-			url: "ajax/SpecificEvent.php",
+			url: "ajax/specificEvent.php",
 			type: "POST",
 			data: 
 			{ title : title, beacon : beacon, teaser : teaser, link : link, date : date }
