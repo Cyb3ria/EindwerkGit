@@ -21,6 +21,8 @@
 		$EventZone = $row["n_beacon"];
 		$EventDate = $row["n_date"];
 	}
+
+    <?php include_once("userHeader.include.php"); ?>
 	echo($EventTitle);
 	echo($EventTeaser);
 	echo($EventLink);
