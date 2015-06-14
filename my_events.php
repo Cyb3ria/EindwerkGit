@@ -54,6 +54,8 @@ if(isset($_POST['delete_row']))
 		<li><a href="#">My notifications <i class="fa fa-angle-right"></i></a></li>
 		<li><a href="#">Starred Notifications <i class="fa fa-angle-right"></i></a></li>
 		<li><a href="add_event.php">Add Notification <i class="fa fa-angle-right"></i></a></li>
+        <li><a href="addBeacon.php">Add beacon<i class="fa fa-angle-right"></i></a></li>
+        
 	</ul>
 </div>
     

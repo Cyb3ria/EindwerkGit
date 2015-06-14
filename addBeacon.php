@@ -1,23 +1,20 @@
 <?php
 session_start();
-  include("classes/event.class.php");
+  include("classes/beacon.class.php");
   
 if(!isset($_SESSION['loggedin']))
 {
   header('location: login.php');
 }
-$event = new Event();
-$uid = $_SESSION['u_id'];
+$beacon = new Beacon();
 
   if(!empty($_POST))
   {
-    $event->Title = $_POST['titel'];
-    $event->Teaser = $_POST['teaser'];
-    $event->Link = $_POST['link'];
-    $event->Beacon = $_POST['beacon0'];
-    $event->EndDate = $_POST['enddate'];
-    $event->broadcast();
-    $event->save($uid);
+    $beacon->Name = $_POST['name'];
+    $beacon->Major = $_POST['major'];
+    $beacon->Minor = $_POST['minor'];
+
+    $beacon->save();
 
   }
 ?>
@@ -26,10 +23,8 @@ $uid = $_SESSION['u_id'];
 
 <head>
     <meta charset="UTF-8">
-
-    <title>Add event</title>
     
-    	<title>James | Add Event</title>
+    	<title>James | Add Beacon</title>
     
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
             <link rel="icon" href="img/JamesIcon.ico" type="image/ico" />
@@ -65,25 +60,17 @@ $uid = $_SESSION['u_id'];
                 <a href="#" id="logoJ">James</a>
 </div>
         
-        <h1 id="BlueTitle">Add event</h1>
+        <h1 id="BlueTitle">Add beacon</h1>
     
 
         <form id="addeventform" action="" method="POST" enctype="multipart/form-data">
             <?php if(isset($message)) { echo "<div id='errormessage'>" . $message . "</div>"; } ?>
-            <label for="titel">Titel</label>
-            <input type="text" id="titel" required="required" name="titel" placeholder="Mijn Event">
-
-            <label for="teaser">Event Info</label>
-            <textarea type="text" id="teaser" required="required" name="teaser" placeholder="Mijn event ..."></textarea>
-
-            <label for="link">Event Link</label>
-            <input type="text" id="link" required="required" name="link" placeholder="mijnevent.com/event">
 
             <label for="beacon">Zone</label>
 
             <div id="beaconsdiv">
                 
-                <select id="beacon0" name="beacon0" required="required" selected="Pick A Zone">
+                <select id="name" name="name" required="required" selected="Pick A Zone">
 
                     <optgroup label="Campus Kruidtuin">
                     <option class="sub-item" value="Campus Kruidtuin">Campus Kruidtuin</option>
@@ -99,30 +86,12 @@ $uid = $_SESSION['u_id'];
                     <option class="sub-item" value="Bibliotheek">Bibliotheek</option>
                     </optgroup>
                 </select>
-
-            <div id="BC" style="display: none;">    
-            <p id="curBC">
-            Currently being broadcasted at <span id="zoneBC"></span>
-            </p>
-            <table id="BCtable">
-            <tr class="mainRow">
-                <td class="mainCol-Add">Event Title</td>
-                <td class="mainCol-Add">Event Link</td>        
-                <td class="mainCol-Add">Event Date</td>
-                <td class="mainCol-Add">Created by</td>
-            </tr>
-            </table>
-            <?php
-            ?>
-            </div>
-            </div>
-
-                </style>
-            </div>
-            
-            <label for="enddate">End Date</label>
-            <br />
-            <input type="date" id="enddate" required="required" name="enddate">
+                
+                <label for="major">Major ID</label>
+            <input type="text" id="major" required="required" name="major" placeholder="15">
+                
+                <label for="minor">Minor ID</label>
+            <input type="text" id="minor" required="required" name="minor" placeholder="4567">
 
             <div id="submitknop">
                 <button type="submit" id="submitEvent" class="btn btn-default">Done</button>
@@ -135,21 +104,4 @@ $uid = $_SESSION['u_id'];
 <script src="ajax/ajax.js" type="text/javascript"></script>
 <script src="js/menu.js" type="text/javascript"></script>
 <script src="js/script.js" type="text/javascript"></script>
-<script type="text/javascript">
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
-
-if(dd<10) {
-    dd='0'+dd
-} 
-
-if(mm<10) {
-    mm='0'+mm
-} 
-
-today = yyyy+'-'+mm+'-'+dd;
-document.getElementById("enddate").setAttribute("min", today);
-</script>
 </html>
