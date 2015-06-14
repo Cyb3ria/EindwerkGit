@@ -4,6 +4,7 @@ session_start();
 
 $m = new Event();
 $arrayAllEvents = $m->getAll();
+
 $arrayFavorites = $m->getFavo();
 
 if(!isset($_SESSION['loggedin']))
@@ -13,16 +14,16 @@ if(!isset($_SESSION['loggedin']))
 
   $db = new db();
   
-  while ($row = mysqli_fetch_assoc($arrayFavorites))
-  {
+while ($row = mysqli_fetch_assoc($arrayFavorites))
+{
   $unfavoriteID = $row['f_id'];
   $uid = $_SESSION['u_id'];
-  }
+}
 
-  while ($row = mysqli_fetch_assoc($arrayAllEvents))
-  {
+while ($row = mysqli_fetch_assoc($arrayAllEvents))
+{
   $uid = $_SESSION['u_id'];
-  }
+}
 
 if(isset($_POST['favorite_row'])) 
 {
@@ -133,7 +134,7 @@ if(isset($_POST['Unfavorite_row']))
     echo "<form method='post'>
           <input type ='hidden' name='id_to_be_favo'
           value='".$a['n_id']."' />
-          <input type='submit' class='favoriteFalse' id='FavoBtn' name='favorite_row' value='favorite' />
+          <input type='submit' class='tesfavoriteFalse' id='FavoBtn' name='favorite_row' value='favorite' />
           </form>
           
           <div class='clearfix'> </div>";       

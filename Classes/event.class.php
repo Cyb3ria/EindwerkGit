@@ -86,6 +86,19 @@
 				return $result;
 			}
 
+		public function getNonFavo()
+			{
+				$uid = $_SESSION['u_id'];
+		     	$db = new db();
+				$sql= "SELECT *
+					  FROM notifications JOIN favorites 
+					  ON notifications.n_id = favorites.n_id
+					  WHERE favorites.u_id <> '".$uid."'";
+
+		     	$result = $db->conn->query($sql);
+				return $result;
+			}
+
 		public function getBeaconEvent($ZoneName)
 			{
 				$db = new db();
