@@ -109,7 +109,8 @@
 					  (				  
 					  SELECT n_id
 					  FROM favorites
-					  WHERE u_id ='".$uid."')";
+					  WHERE u_id ='".$uid."'
+					  )";
 
 		     	$result = $db->conn->query($sql);
 				return $result;

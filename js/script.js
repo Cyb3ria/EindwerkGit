@@ -1,14 +1,13 @@
 $( document ).ready(function() 
 {
-
 //Add Event	
 	//Currently Broadcasting @Zone 
 	$('#beacon0').on('change', function () 
 	{
      	var optionSelected = $(this).find("option:selected");
-     	var valueSelected  = optionSelected.val();
-     	var Zone = optionSelected.text();
-    	alert(Zone);
+     	var textSelected   = optionSelected.text();
+     	$("#zoneBC").text(textSelected);
+    	$("#BC").fadeIn(500);
 	});
 
 //My Events

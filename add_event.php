@@ -55,7 +55,6 @@ $uid = $_SESSION['u_id'];
         
         <h1 id="BlueTitle">Add event</h1>
     
-
         <form id="addeventform" action="" method="POST" enctype="multipart/form-data">
             <?php if(isset($message)) { echo "<div id='errormessage'>" . $message . "</div>"; } ?>
             <label for="titel">Titel</label>
@@ -99,16 +98,15 @@ $uid = $_SESSION['u_id'];
             <p id="curBC">
             Currently being broadcasted at <span id="zoneBC"></span>
             </p>
-            <table id="BCtable">
-            <tr class="mainRow">
-                <td class="mainCol-Add">Event Title</td>
-                <td class="mainCol-Add">Event Link</td>        
-                <td class="mainCol-Add">Event Date</td>
-                <td class="mainCol-Add">Created by</td>
-            </tr>
+            <p id="CBtitle">
+            </p>
+            <p id="CBlink">
+            </p>
+            <p id="CBdate">
+            </p>
             </table>
-            <?php
-            ?>
+            
+            </div>
             </div>
             </div>
 
