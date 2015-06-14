@@ -10,7 +10,7 @@ $db = new db();
 $m = new Event();
 $arrayNotifications = $m->getMine();
 
-while ($row = mysqli_fetch_assoc($arrayNotifications))
+/*while ($row = mysqli_fetch_assoc($arrayNotifications))
 	{
 	$removable = $row['n_id'];
 	}
@@ -22,7 +22,7 @@ if(isset($_POST['delete_row']))
    {
      echo mysqli_error($db->conn);
    }
-}
+}*/
 
 ?>
 
@@ -60,16 +60,10 @@ if(isset($_POST['delete_row']))
       <a class = "titleNote" href="<?= $a['n_link']?>"><h4 class="titleNote"><?= $a['n_title']?></h4></a>
 		  <h4 class="teaserNote"><?= $a['n_beacon']?></h4>
       <h4 class="datenote"><?= $a['n_date']?></h4>
-      <?php
-      	echo "<button>Edit</button>";
-      echo "<form method='post'><input type='hidden' name='id_to_be_deleted'
-								   value='".$removable."' />
-   								  <input type='submit' name='delete_row' value='delete' />";
-
-	
             
-      ?>
+			<a id="deleteKnop" href="delete.php?type=event&amp;id=<?= $a['n_id'] ?>" class="delete" title="delete" >Verwijder</a>
     </div>
+    
     <div class = "lijn">lijn</div>
 	<?php 
   }?> 
