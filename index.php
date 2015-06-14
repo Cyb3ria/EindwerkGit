@@ -3,8 +3,7 @@ session_start();
   include("classes/event.class.php");
 
 $m = new Event();
-$arrayAllEvents = $m->getAll();
-
+$arrayAllEvents = $m->getNonFavo();
 $arrayFavorites = $m->getFavo();
 
 if(!isset($_SESSION['loggedin']))
@@ -20,13 +19,9 @@ while ($row = mysqli_fetch_assoc($arrayFavorites))
   $uid = $_SESSION['u_id'];
 }
 
-while ($row = mysqli_fetch_assoc($arrayAllEvents))
-{
-  $uid = $_SESSION['u_id'];
-}
-
 if(isset($_POST['favorite_row'])) 
 {
+  $uid = $_SESSION['u_id'];
    $Fid = $_POST['id_to_be_favo'];
    if(!mysqli_query($db->conn, "INSERT INTO favorites (u_id, n_id, f_boolean) VALUES
         ('". $db->conn->real_escape_string($uid) ."' ,
@@ -45,7 +40,6 @@ if(isset($_POST['Unfavorite_row']))
       echo mysqli_error($db);
     }
   }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -127,6 +121,7 @@ if(isset($_POST['Unfavorite_row']))
          echo $a['n_type'];
          echo "</div>";
          ?>
+
          <h4 class="titleNote"><?= $a['n_title']?></h4>
       </a>
         <h4 class="teaserNote"><?= $a['n_beacon']?> | <?= $a['n_date']?></h4>
@@ -134,7 +129,7 @@ if(isset($_POST['Unfavorite_row']))
     echo "<form method='post'>
           <input type ='hidden' name='id_to_be_favo'
           value='".$a['n_id']."' />
-          <input type='submit' class='tesfavoriteFalse' id='FavoBtn' name='favorite_row' value='favorite' />
+          <input type='submit' class='favoriteFalse' id='FavoBtn' name='favorite_row' value='favorite' />
           </form>
           
           <div class='clearfix'> </div>";       

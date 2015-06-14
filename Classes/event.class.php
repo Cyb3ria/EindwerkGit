@@ -91,9 +91,12 @@
 				$uid = $_SESSION['u_id'];
 		     	$db = new db();
 				$sql= "SELECT *
-					  FROM notifications JOIN favorites 
-					  ON notifications.n_id = favorites.n_id
-					  WHERE favorites.u_id <> '".$uid."'";
+					  FROM notifications
+					  WHERE n_id NOT IN
+					  (				  
+					  SELECT n_id
+					  FROM favorites
+					  WHERE u_id ='".$uid."')";
 
 		     	$result = $db->conn->query($sql);
 				return $result;
