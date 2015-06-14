@@ -69,80 +69,61 @@ if(isset($_POST['Unfavorite_row']))
 <div id="notesPrint">
 <?php
   foreach($arrayFavorites as $f) 
-  {?>
-    <div class="SingleNote">
-      <a class = "titleNote" 
-         
-         data-title="<?= $f['n_title'];?>" 
-         data-beacon="<?= $f['n_beacon'];?>" 
-         data-teaser="<?= $f['n_teaser'];?>" 
-         data-link="<?= $f['n_link'];?>" 
-         data-date="<?= $f['n_date'];?>" 
-         
-         href="#">
-         <?php echo "<div class='event-".$f['n_type']."'>";
-         echo $f['n_type'];
-         echo "</div>";
-         ?>
+  {
+    echo $f['n_id'];
+    echo "<div class='SingleNote'>";
+    echo "<a class = 'titleNote' href='specificEvent.php?n_id=".$f['n_id']."'>";
+    echo "<div class='event-".$f['n_type']."'>";
+    echo $f['n_type'];
+    echo "</div>";
+?>
+    <h4 class="titleNote"><?= $f['n_title']?></h4>
+    </a>
+    <h4 class="teaserNote"><?= $f['n_beacon']?> | <?= $f['n_date']?></h4>
 
-         <h4 class="titleNote"><?= $f['n_title']?></h4>
-      </a>
-      <h4 class="teaserNote"><?= $f['n_beacon']?> | <?= $f['n_date']?></h4>
-
-  <?php
+<?php
     echo "<form method='post'>
           <input type ='hidden' name='id_to_be_unfavo'
           value='".$f['f_id']."' />
           <input type='submit' class='favoriteTrue' id='FavoBtn' name='unfavorite_row' value='favorite' />
           </form>
-          
           <div class='clearfix'> </div>";       
-  ?>
-    </div>
-    <div class = "lijn">lijn</div>
-  <?php 
-  }?> 
+?>
+</div>
+<div class = "lijn">lijn</div>
+<?php 
+}
+?> 
 </div>
 <div id="notesPrint">
 <?php
 	foreach($arrayAllEvents as $a) 
-  {?>
-		<div class="SingleNote">
-      <a class = "titleNote" 
-         
-         data-title="<?= $a['n_title'];?>" 
-         data-beacon="<?= $a['n_beacon'];?>" 
-         data-teaser="<?= $a['n_teaser'];?>" 
-         data-link="<?= $a['n_link'];?>" 
-         data-date="<?= $a['n_date'];?>" 
-         
-         href="#">
-        <?php echo "<div class='event-".$a['n_type']."'>";
-         echo $a['n_type'];
-         echo "</div>";
-         ?>
-
-         <h4 class="titleNote"><?= $a['n_title']?></h4>
-      </a>
-        <h4 class="teaserNote"><?= $a['n_beacon']?> | <?= $a['n_date']?></h4>
-  <?php
+  {
+    echo $a['n_id'];
+		echo "<div class='SingleNote'>";
+    echo "<a class ='titleNote' href='specificEvent.php?n_id=".$a['n_id']."'' >";
+    echo "<div class='event-".$a['n_type']."'>";
+    echo $a['n_type'];
+    echo "</div>";
+?>
+    <h4 class="titleNote"><?= $a['n_title']?></h4>
+    </a>
+    <h4 class="teaserNote"><?= $a['n_beacon']?> | <?= $a['n_date']?></h4>
+<?php
     echo "<form method='post'>
           <input type ='hidden' name='id_to_be_favo'
           value='".$a['n_id']."' />
           <input type='submit' class='favoriteFalse' id='FavoBtn' name='favorite_row' value='favorite' />
-          </form>
-          
+          </form> 
           <div class='clearfix'> </div>";       
-  ?>
-    </div>
-    <div class = "lijn">lijn</div>
-	<?php 
-  }?> 
+?>
+</div>
+<div class = "lijn">lijn</div>
+<?php 
+  }
+?> 
 </div>  
-    
-
 </body>
-    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
     <script src="js/menu.js" type="text/javascript"></script>
     <script src="ajax/ajax.js" type="text/javascript"></script>

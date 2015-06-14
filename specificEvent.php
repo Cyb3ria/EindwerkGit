@@ -6,8 +6,17 @@ session_start();
     {
         header('location: login.php');
     }
-
-    $session = $_SESSION['n_beacon'];
+$e = new Event();
+$NoteId = $_GET['n_id'];
+$arrayDetails = $e->getAllWithID($NoteId);
+while($row = mysqli_fetch_array($arrayDetails))
+    {
+        $EventTitle = $row["n_title"];
+        $EventTeaser = $row["n_teaser"];
+        $EventLink = $row["n_link"];
+        $session = $row["n_beacon"];
+        $EventDate = $row["n_date"];
+    }
 
 if($session == 'Creativity Gym')
 {
@@ -80,7 +89,6 @@ else if ($session == 'Cafetaria De Vest')
     }</style>";
 }
 
-
 ?>
 
 <!doctype html>
@@ -90,7 +98,7 @@ else if ($session == 'Cafetaria De Vest')
     
     	<title>James | My Events</title>
     
-            <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <link rel="icon" href="img/JamesIcon.ico" type="image/ico" />
 
     <meta name="description" content="" />
@@ -113,9 +121,9 @@ else if ($session == 'Cafetaria De Vest')
     
     <div id="Spcontent">
     
-        <h1 id="eventTitel"><?= $_SESSION['n_title']; ?></h1>
-        <h2 id="atLoc">&#64;<?= $_SESSION['n_beacon']; ?> // <?= $_SESSION['n_date']; ?></h2>
-        <p id="eventText"><?= $_SESSION['n_teaser']; ?></p>
+        <h1 id="eventTitel"><?= $EventTitle; ?></h1>
+        <h2 id="atLoc">&#64;<?= $session; ?> // <?= $EventDate; ?></h2>
+        <p id="eventText"><?= $EventTeaser; ?></p>
         <a id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>
 
 

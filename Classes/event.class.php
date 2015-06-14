@@ -9,6 +9,7 @@
 		private $m_sLink;
 		private $m_sBeacon;
 		private $m_sEndDate;
+		private $m_sType;
 
 		public function __set($p_sProperty, $p_vValue)
 			{
@@ -16,6 +17,9 @@
 					case 'Title':
 						$this->m_sTitle =$p_vValue;
 						break;
+					case 'Type':
+						$this->m_sType =$p_vValue;
+						break;		
 					case 'Teaser':
 						$this->m_sTeaser =$p_vValue;
 						break;
@@ -40,6 +44,9 @@
 					case 'Title':
 						return $this->m_sTitle;
 						break;
+					case 'Type':
+						$this->m_sType =$p_vValue;
+						break;	
 					case 'Teaser':
 						return $this->m_sTeaser;
 						break;
@@ -62,7 +69,13 @@
 		     	$result = $db->conn->query($sql);
 				return $result;
 			}
-
+		public function getAllWithID($NoteId)
+			{
+		 	    $db = new db();
+				$sql="SELECT * from notifications WHERE n_id ='".$NoteId."'";
+		     	$result = $db->conn->query($sql);
+				return $result;
+			}
 		public function getMine()
 			{
 				$uid = $_SESSION['u_id'];
@@ -128,8 +141,9 @@
 			{
             
 		 	    $db = new db();
-                $sql = "INSERT into notifications (n_title, n_teaser, n_link, n_beacon, n_date, u_id) VALUES
+                $sql = "INSERT into notifications (n_title, n_type, n_teaser, n_link, n_beacon, n_date, u_id) VALUES
 				('".$db->conn->real_escape_string($this->m_sTitle) ."' ,
+				'". $db->conn->real_escape_string($this->m_sType) ."' ,
 				'". $db->conn->real_escape_string($this->m_sTeaser) ."' ,
 				'". $db->conn->real_escape_string($this->m_sLink) ."' ,
 				'". $db->conn->real_escape_string($this->m_sBeacon) ."',

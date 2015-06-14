@@ -13,6 +13,7 @@ $uid = $_SESSION['u_id'];
   {
     $event->Title = $_POST['titel'];
     $event->Teaser = $_POST['teaser'];
+    $event->Type = $_POST['EventType'];
     $event->Link = $_POST['link'];
     $event->Beacon = $_POST['beacon0'];
     $event->EndDate = $_POST['enddate'];
@@ -59,6 +60,13 @@ $uid = $_SESSION['u_id'];
             <?php if(isset($message)) { echo "<div id='errormessage'>" . $message . "</div>"; } ?>
             <label for="titel">Titel</label>
             <input type="text" id="titel" required="required" name="titel" placeholder="Mijn Event">
+
+            <label for="EventType">Event Type</label>
+            <select id="EventType" name="EventType" required="required" selected="">
+                <option class="sub-item" value="A">Announcement</option>
+                <option class="sub-item" value="E">Event</option>
+                <option class="sub-item" value="I">Info</option>
+            </select>
 
             <label for="teaser">Event Info</label>
             <textarea type="text" id="teaser" required="required" name="teaser" placeholder="Mijn event ..."></textarea>

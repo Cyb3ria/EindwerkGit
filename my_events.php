@@ -9,21 +9,6 @@ if(!isset($_SESSION['loggedin']))
 $db = new db();	
 $m = new Event();
 $arrayNotifications = $m->getMine();
-
-/*while ($row = mysqli_fetch_assoc($arrayNotifications))
-	{
-	$removable = $row['n_id'];
-	}
-
-if(isset($_POST['delete_row'])) 
-{
-   $id = $_POST['id_to_be_deleted'];
-   if(!mysqli_query($db->conn, "DELETE FROM notifications WHERE n_id ='".$id."'"))
-   {
-     echo mysqli_error($db->conn);
-   }
-}*/
-
 ?>
 
 <!doctype html>
@@ -73,6 +58,7 @@ if(isset($_POST['delete_row']))
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 <script src="ajax/ajax.js" type="text/javascript"></script>
+<script src="js/script.js" type="text/javascript"></script>
 <script src="js/menu.js" type="text/javascript"></script>
 
 </html>
