@@ -32,4 +32,28 @@ $(document).ready(function()
 		});
 	});
     
+    
+    $('.favoriteFalse').on('click', function () 
+	{
+		var Fav = $('.tempid').val();
+
+     	$.ajax
+     	({
+    	url: 		'ajax/ajax.php',
+    	data: 		'n_id' + Fav,
+    	dataType: 	'HTML',
+    	success: function(data)
+    		{
+    			console.log('yay');
+			},
+		error: function(xhr, status, error) 
+			{
+				var errors = JSON.parse(xhr.responseText);
+				console.log("failed");
+  				console.log (errors);
+			}
+		});
+	});
+    
+    
 });

@@ -1,5 +1,5 @@
 <div class="slideout-menu">
-	<h3>James<a href="#" class="slideout-menu-toggle">&times;</a></h3>
+	<h3>James<a href="my_events.php" class="slideout-menu-toggle">&times;</a></h3>
 	<ul>
 		<li><a href="my_events.php">My Notifications<i class="fa fa-angle-right"></i></a></li>
 		<li><a href="#">All Notifications<i class="fa fa-angle-right"></i></a></li>

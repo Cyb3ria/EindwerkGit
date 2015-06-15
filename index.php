@@ -11,7 +11,7 @@ if(!isset($_SESSION['loggedin']))
   header('location: login.php');
 }
 
-  $db = new db();
+/*  $db = new db();
   
 while ($row = mysqli_fetch_assoc($arrayFavorites))
 {
@@ -39,7 +39,7 @@ if(isset($_POST['Unfavorite_row']))
     {
       echo mysqli_error($db);
     }
-  }
+  }*/
 ?>
 <!doctype html>
 <html lang="en">
@@ -111,7 +111,7 @@ if(isset($_POST['Unfavorite_row']))
     <h4 class="teaserNote"><?= $a['n_beacon']?> | <?= $a['n_date']?></h4>
 <?php
     echo "<form method='post'>
-          <input type ='hidden' name='id_to_be_favo'
+          <input type ='hidden' class='tempid' name='id_to_be_favo'
           value='".$a['n_id']."' />
           <input type='submit' class='favoriteFalse' id='FavoBtn' name='favorite_row' value='favorite' />
           </form> 

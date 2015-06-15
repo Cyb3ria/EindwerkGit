@@ -1,7 +1,7 @@
 <div class="slideout-menu">
 	<h3>James <a href="#" class="slideout-menu-toggle">&times;</a></h3>
 	<ul>
-		<li><a href="#">Home <i class="fa fa-angle-right"></i></a></li>
+		<li><a href="index.php">Home <i class="fa fa-angle-right"></i></a></li>
 		<li><a href="#">Starred Notifications <i class="fa fa-angle-right"></i></a></li>
 		<li><a href="#">Upcoming Events <i class="fa fa-angle-right"></i></a></li>
 		<li><a href="#">Administration <i class="fa fa-angle-right"></i></a></li>
