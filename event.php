@@ -130,6 +130,9 @@ else if ($session == 'Cafetaria De Vest')
     
         <h1 id="eventTitel"><?= $EventTitle; ?></h1>
         <h2 id="atLoc">&#64;<?= $session; ?> // <?= $EventDate; ?></h2>
+        <?php
+            echo '<h2 id="atLoc">'.$TotalFavs.'</h2>';
+        ?>
         <p id="eventText"><?= $EventTeaser; ?></p>
         <a target="_blank" id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>
 

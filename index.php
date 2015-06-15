@@ -70,6 +70,8 @@ if(isset($_POST['Unfavorite_row']))
 <?php
   foreach($arrayFavorites as $f) 
   {
+    $NoteId = $f['n_id'];
+    $TotalFavs = $m->totalfavorites($NoteId);
     echo "<div class='SingleNote'>";
     echo "<a class = 'titleNote' href='specificEvent.php?n_id=".$f['n_id']."'>";
     echo "<div class='event-".$f['n_type']."'>";
@@ -80,6 +82,7 @@ if(isset($_POST['Unfavorite_row']))
     <h4 class="titleNote"><?= $f['n_title']?></h4>
     </a>
     <h4 class="teaserNote"><?= $f['n_beacon']?> | <?= $f['n_date']?></h4></div>
+    <p><?= $TotalFavs ?></p>
 
 <?php
     echo "<form method='post'>
@@ -99,6 +102,8 @@ if(isset($_POST['Unfavorite_row']))
 <?php
 	foreach($arrayAllEvents as $a) 
   {
+    $NoteId = $a['n_id'];
+    $TotalFavs = $m->totalfavorites($NoteId);
 		echo "<div class='SingleNote'>";
     echo "<a class ='titleNote' href='specificEvent.php?n_id=".$a['n_id']."'' >";
     echo "<div class='event-".$a['n_type']."'>";
@@ -109,6 +114,8 @@ if(isset($_POST['Unfavorite_row']))
     <h4 class="titleNote"><?= $a['n_title']?></h4>
     </a>
     <h4 class="teaserNote"><?= $a['n_beacon']?> | <?= $a['n_date']?></h4></div>
+    <p><?= $TotalFavs ?></p>
+    
 <?php
     echo "<form method='post'>
           <input type ='hidden' class='tempidF' name='id_to_be_favo'

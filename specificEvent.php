@@ -11,12 +11,14 @@ $NoteId = $_GET['n_id'];
 $arrayDetails = $e->getAllWithID($NoteId);
 while($row = mysqli_fetch_array($arrayDetails))
     {
+        $EventID =  $row["n_title"];
         $EventTitle = $row["n_title"];
         $EventTeaser = $row["n_teaser"];
         $EventLink = $row["n_link"];
         $session = $row["n_beacon"];
         $EventDate = $row["n_date"];
     }
+$TotalFavs = $e->totalfavorites($NoteId);
 
 if($session == 'Creativity Gym')
 {
@@ -125,12 +127,16 @@ else if ($session == 'Cafetaria De Vest')
 		<li><a href="#">Administration <i class="fa fa-angle-right"></i></a></li>
 	</ul>
 </div>
-    
+
     <div id="Spcontent">
     
         <h1 id="eventTitel"><?= $EventTitle; ?></h1>
         <h2 id="atLoc">&#64;<?= $session; ?> // <?= $EventDate; ?></h2>
+        <?php
+            echo '<h2 id="atLoc">'.$TotalFavs.'</h2>';
+        ?>
         <p id="eventText"><?= $EventTeaser; ?></p>
+
         <a target="_blank" id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>
 
 

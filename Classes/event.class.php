@@ -166,6 +166,15 @@
 				return $result;
 			}	
 
+		public function totalfavorites($NoteId)
+			{
+				$db = new db();
+				$sql = "SELECT count(*) FROM favorites WHERE n_id ='".$NoteId."'";	
+				$result = $db->conn->query($sql);
+				$row=mysqli_fetch_assoc($result);
+				return $row['count(*)'];
+				
+			}	
 
 		public function save($uid)
 			{
