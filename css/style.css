@@ -273,6 +273,17 @@ padding-left: 10px;
     margin-top: 20px;
 }
 
+.deleteBeacons
+{
+    margin-top: -45px;
+        float: right;
+    margin-right: 20px;
+    text-decoration: none;
+    background-color: #039BA9;
+    color: white;
+    padding: 5px 10px;
+}
+
 
 /*******************************ADD EVENT***************************/
 #addeventform label
