@@ -98,7 +98,7 @@ else if ($session == 'Cafetaria De Vest')
 <head>
 	<meta charset="UTF-8">
     
-    	<title>James | My Events</title>
+    	<title>James | <?= $EventTitle; ?></title>
     
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <link rel="icon" href="img/JamesIcon.ico" type="image/ico" />
@@ -131,10 +131,13 @@ else if ($session == 'Cafetaria De Vest')
     <div id="Spcontent">
     
         <h1 id="eventTitel"><?= $EventTitle; ?></h1>
-        <h2 id="atLoc">&#64;<?= $session; ?> // <?= $EventDate; ?></h2>
+        <span class="eventIcons"><img src="img/loc.png"><h2>&#64;<?= $session; ?></h2></span>
+        <div class="clearfix"></div>
+        <span class="eventIcons"><img class="imageSP" src="img/date.png"><h2><?= $EventDate; ?></h2></span>
+                <div class="clearfix"></div>
         <?php
-            echo '<h2 id="atLoc">'.$TotalFavs.'</h2>';
-        ?>
+            echo ' <span class="eventIcons"><img src="img/starSP.png"><h2 >'.$TotalFavs.' Like(s)</h2></span>';
+        ?>        <div class="clearfix"></div>
         <p id="eventText"><?= $EventTeaser; ?></p>
 
         <a target="_blank" id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>

@@ -63,7 +63,7 @@ if(isset($_POST['Unfavorite_row']))
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <?php include_once("userHeader.include.php"); ?>
+    <?php include_once("adminHeader.include.php"); ?>
 
 <h1 id="BlueTitle">All Events</h1>
 <div id="notesPrint">

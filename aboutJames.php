@@ -11,7 +11,7 @@ if(!isset($_SESSION['loggedin']))
 <head>
 	<meta charset="UTF-8">
     
-    	<title>James | Index</title>
+    	<title>James | About</title>
     
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
             <link rel="icon" href="img/JamesIcon.ico" type="image/ico" />

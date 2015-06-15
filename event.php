@@ -96,7 +96,7 @@ else if ($session == 'Cafetaria De Vest')
 <head>
 	<meta charset="UTF-8">
     
-    	<title>James | My Events</title>
+    	<title>James | <?= $EventTitle; ?></title>
     
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <link rel="icon" href="img/JamesIcon.ico" type="image/ico" />
