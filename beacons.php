@@ -1,16 +1,14 @@
 <?php
 session_start();
-include("classes/event.class.php");
+include("classes/beacon.class.php");
 
 if(!isset($_SESSION['loggedin']))
 {
   header('location: login.php');
 }
-$db = new db();	
-$m = new Event();
-$arrayNotifications = $m->getMine();
+$b = new Beacon();
+$arrayBeacons = $b->getAll();
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -35,17 +33,18 @@ $arrayNotifications = $m->getMine();
     
     <?php include_once("adminHeader.include.php"); ?>
         
-        <h1 id="BlueTitle">My Events</h1>
+        <h1 id="BlueTitle">All Beacons</h1>
 	
 <div id="notesPrint">
 <?php
-	foreach($arrayNotifications as $a) 
-  { ?>
+	foreach($arrayBeacons as $a) 
+  { 
+  	?>
 		<div class="SingleNote">
-      <a target ="_blank" class = "titleNote" href="http://<?= $a['n_link']?>"><h4 class="titleNote"><?= $a['n_title']?></h4></a>
-		  <h4 class="teaserNote"><?= $a['n_beacon']?></h4>
-      <h4 class="datenote"><?= $a['n_date']?></h4>      
-			<a id="deleteKnop" href="#" data="<?= $a['n_id']?>" class="deleteEvent" title="delete" >Verwijder</a>
+		<h4 class="titleNote"><?= $a['n_beacon']?></h4>
+      	<h4 class="likes">Major ID: <?= $a['b_major']?></h4>
+      	<h4 class="likes">Minor ID: <?= $a['b_minor']?></h4>
+        <a id="deleteKnop" href="#" data="<?= $a['b_id']?>" class="deleteBeacons" title="delete" >Verwijder</a>
     </div>
     
     <div class = "lijn">lijn</div>

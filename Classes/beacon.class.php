@@ -48,7 +48,7 @@
 		public function getAll()
 			{
 		 	    $db = new db();
-				$sql="SELECT * from beacons";
+				$sql="SELECT * from beacons ORDER BY n_beacon";
 		     	$result = $db->conn->query($sql);
 				return $result;
 			}
@@ -61,7 +61,7 @@
 				return $result;
 			}
             
-            public function save()
+        public function save()
 			{
             
 		 	    $db = new db();
@@ -72,6 +72,13 @@
                 
 		 	    $result = $db->conn->query($sql);
 				return $result;
+			}
 
+		public function delete($BeaconID)
+			{
+				$db = new db();
+				$sql = "DELETE FROM beacons WHERE b_id = '".$BeaconID."'";
+				$result = $db->conn->query($sql);
+				return $result;
 			}
 	}

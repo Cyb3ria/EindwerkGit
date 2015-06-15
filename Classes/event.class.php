@@ -174,7 +174,15 @@
 				$row=mysqli_fetch_assoc($result);
 				return $row['count(*)'];
 				
-			}	
+			}
+
+		public function delete($noteID)
+			{
+				$db = new db();
+				$sql = "DELETE FROM notifications WHERE n_id = '".$noteID."'";
+				$result = $db->conn->query($sql);
+				return $result;
+			}		
 
 		public function save($uid)
 			{

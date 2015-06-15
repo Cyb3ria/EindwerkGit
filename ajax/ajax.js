@@ -77,7 +77,7 @@ $(document).ready(function()
     	data: 		'n_id='+butData+'&uid='+userData,
     	success: function(data)
     		{
-    			location.reload(true)
+    			location.reload(true);
 			},
 		error: function(xhr, status, error) 
 			{
@@ -88,5 +88,56 @@ $(document).ready(function()
 		});
 	});
     
-    
+//My_Events
+	//Delete
+	$('.deleteEvent').on('click', function ( event ) 
+	{
+		event.preventDefault();
+		var butData = $(this).attr("data");
+
+
+     	$.ajax
+     	({
+     	type:		'POST',
+    	url: 		'ajax-deleteEvent.php',
+    	data: 		"n_id="+butData,
+    	success: function(data)
+    		{
+    			location.reload(true);
+			},
+		error: function(xhr, status, error) 
+			{
+				var errors = JSON.parse(xhr.responseText);
+				console.log("failed");
+  				console.log (errors);
+			}
+		});
+	});  
+
+
+//Beacons
+	//Delete
+	$('.deleteBeacons').on('click', function ( event ) 
+	{
+		event.preventDefault();
+		var butData = $(this).attr("data");
+
+
+     	$.ajax
+     	({
+     	type:		'POST',
+    	url: 		'ajax-deleteBeacon.php',
+    	data: 		"b_id="+butData,
+    	success: function(data)
+    		{
+    			location.reload(true);
+			},
+		error: function(xhr, status, error) 
+			{
+				var errors = JSON.parse(xhr.responseText);
+				console.log("failed");
+  				console.log (errors);
+			}
+		});
+	});   
 });
