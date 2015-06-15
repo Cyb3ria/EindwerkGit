@@ -60,5 +60,33 @@ $(document).ready(function()
 			}
 		});
 	});
+
+
+
+	//UnFavorite
+	$('.favoriteTrue').on('click', function () 
+	{
+		event.preventDefault();
+		var butData = $(this).attr("data");
+		var userData = $(this).attr("data-user");
+
+     	$.ajax
+     	({
+     	type:		'GET',
+    	url: 		'ajax-unfavorite.php',
+    	data: 		'n_id='+butData+'&uid='+userData,
+    	success: function(data)
+    		{
+    			location.reload(true)
+			},
+		error: function(xhr, status, error) 
+			{
+				var errors = JSON.parse(xhr.responseText);
+				console.log("failed");
+  				console.log (errors);
+			}
+		});
+	});
+    
     
 });

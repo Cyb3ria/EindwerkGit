@@ -70,7 +70,6 @@ if(isset($_POST['Unfavorite_row']))
 <?php
   foreach($arrayFavorites as $f) 
   {
-    echo $f['n_id'];
     echo "<div class='SingleNote'>";
     echo "<a class = 'titleNote' href='specificEvent.php?n_id=".$f['n_id']."'>";
     echo "<div class='event-".$f['n_type']."'>";
@@ -82,10 +81,9 @@ if(isset($_POST['Unfavorite_row']))
     <h4 class="teaserNote"><?= $f['n_beacon']?> | <?= $f['n_date']?></h4>
 
 <?php
-    echo $f['f_id'];
     echo "<form method='post'>
           <input type ='hidden' name='id_to_be_unfavo' value='".$f['f_id']."' />
-          <input type='submit' class='favoriteTrue' id='FavoBtn' name='unfavorite_row' value='favorite' />
+          <input type='submit' class='favoriteTrue' data='".$f['n_id']."' data-user ='".$uid."' id='FavoBtn' name='unfavorite_row' value='favorite' />
           </form>
           <div class='clearfix'> </div>";       
 ?>
@@ -99,7 +97,6 @@ if(isset($_POST['Unfavorite_row']))
 <?php
 	foreach($arrayAllEvents as $a) 
   {
-    echo $a['n_id'];
 		echo "<div class='SingleNote'>";
     echo "<a class ='titleNote' href='specificEvent.php?n_id=".$a['n_id']."'' >";
     echo "<div class='event-".$a['n_type']."'>";

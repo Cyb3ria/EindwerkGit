@@ -150,6 +150,14 @@
 				return $result;
 			}
 
+		public function unfavorite($uid, $EventID)
+			{
+				$db = new db();
+				$sql = "DELETE FROM favorites WHERE u_id ='".$uid."' AND n_id ='".$EventID."'";
+				$result = $db->conn->query($sql);
+				return $result;
+			}
+
 		public function Checkfavorite($uid, $EventID)
 			{
 				$db = new db();
