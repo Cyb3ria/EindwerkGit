@@ -262,15 +262,15 @@ padding-left: 10px;
     display: none;
 }
 
-.delete
+.deleteEvent
 {
     float: right;
-    margin-top: -40px;
     margin-right: 20px;
     text-decoration: none;
     background-color: #039BA9;
     color: white;
     padding: 5px 10px;
+    margin-top: 20px;
 }
 
 

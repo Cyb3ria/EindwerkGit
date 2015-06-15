@@ -40,11 +40,20 @@ $arrayNotifications = $m->getMine();
 <div id="notesPrint">
 <?php
 	foreach($arrayNotifications as $a) 
-  { ?>
-		<div class="SingleNote">
-      <a target ="_blank" class = "titleNote" href="http://<?= $a['n_link']?>"><h4 class="titleNote"><?= $a['n_title']?></h4></a>
-		  <h4 class="teaserNote"><?= $a['n_beacon']?></h4>
-      <h4 class="datenote"><?= $a['n_date']?></h4>      
+  { $NoteId = $a['n_id'];
+    $TotalFavs = $m->totalfavorites($NoteId);
+    echo "<div class='SingleNote'>";
+    echo "<a class = 'titleNote' href='specificEvent.php?n_id=".$a['n_id']."'>";
+    echo "<div class='event-".$a['n_type']."'>";
+    echo $a['n_type'];
+    echo "</div>";
+?>
+    <div class="notesDiv">
+    <h4 class="titleNote"><?= $a['n_title']?></h4>
+    </a>
+    <h4 class="teaserNote"><?= $a['n_beacon']?></h4>
+<p class="likes"><?= $TotalFavs ?> Like(s)</p>
+</div>    
 			<a id="deleteKnop" href="#" data="<?= $a['n_id']?>" class="deleteEvent" title="delete" >Verwijder</a>
     </div>
     
