@@ -1,0 +1,160 @@
+@media (min-width : 480px) and (max-width : 720px){
+
+
+
+}
+
+@media (min-width : 720px) and (max-width : 960px){
+
+#addeventform
+{
+    width: 450px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea
+{
+    resize: none;
+    width: 444px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#titel, .beacon, #enddate
+{
+    width: 444px;
+    height: 30px;
+}
+
+#link
+{
+    width: 337px;
+    height: 30px;
+}
+
+#beacon0
+{
+    width: 448px;
+    height: 36px;
+    margin-top: 5px;
+}
+#http
+{
+display: inline-block;
+    background-color: #F26140;
+    color: white;
+    padding: 11px 5px 9px 5px;
+    width: 97px;
+    text-align: center;
+}
+
+#EventType
+{
+    width: 448px;
+    height: 36px;
+    margin-top: 5px;
+}
+
+#scaleLink
+{
+   width: 444px;
+}
+
+#submitEvent
+{
+    width: 447px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+#BC
+{
+
+
+    width: 429px;
+
+
+}    
+    
+}
+
+@media (min-width : 960px){
+    
+    #addeventform
+{
+    width: 800px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea
+{
+    resize: none;
+    width: 788px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#titel, .beacon, #enddate
+{
+    width: 790px;
+    height: 30px;
+}
+
+#link
+{
+    width: 683px;
+    height: 30px;
+}
+
+#beacon0
+{
+    width: 794px;
+    height: 36px;
+    margin-top: 5px;
+}
+#http
+{
+display: inline-block;
+    background-color: #F26140;
+    color: white;
+    padding: 11px 5px 9px 5px;
+    width: 97px;
+    text-align: center;
+}
+
+#EventType
+{
+    width: 794px;
+    height: 36px;
+    margin-top: 5px;
+}
+
+#scaleLink
+{
+   width: 790px;
+}
+
+#submitEvent
+{
+    width: 794px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+#BC
+{
+
+
+    width: 775px;
+
+
+}  
+
+
+}

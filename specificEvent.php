@@ -114,17 +114,24 @@ else if ($session == 'Cafetaria De Vest')
 <body id="SpecBod">
     
     <wrapper id="SpecWrap">
-    
-    <?php include_once("userHeader.include.php"); ?>
+    <a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i><img id="menu-togglebut" src="img/menu-toggle.png"/></a>
         
-        <h1 id="BlueTitle">Event Info</h1>
+        <div class="slideout-menu">
+	<h3>James <a href="#" class="slideout-menu-toggle">&times;</a></h3>
+	<ul>
+		<li><a href="index.php">Home <i class="fa fa-angle-right"></i></a></li>
+		<li><a href="#">Starred Notifications <i class="fa fa-angle-right"></i></a></li>
+		<li><a href="#">Upcoming Events <i class="fa fa-angle-right"></i></a></li>
+		<li><a href="#">Administration <i class="fa fa-angle-right"></i></a></li>
+	</ul>
+</div>
     
     <div id="Spcontent">
     
         <h1 id="eventTitel"><?= $EventTitle; ?></h1>
         <h2 id="atLoc">&#64;<?= $session; ?> // <?= $EventDate; ?></h2>
         <p id="eventText"><?= $EventTeaser; ?></p>
-        <a id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>
+        <a target="_blank" id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>
 
 
         

@@ -42,7 +42,7 @@ $arrayNotifications = $m->getMine();
 	foreach($arrayNotifications as $a) 
   { ?>
 		<div class="SingleNote">
-      <a class = "titleNote" href="<?= $a['n_link']?>"><h4 class="titleNote"><?= $a['n_title']?></h4></a>
+      <a target ="_blank" class = "titleNote" href="http://<?= $a['n_link']?>"><h4 class="titleNote"><?= $a['n_title']?></h4></a>
 		  <h4 class="teaserNote"><?= $a['n_beacon']?></h4>
       <h4 class="datenote"><?= $a['n_date']?></h4>
             

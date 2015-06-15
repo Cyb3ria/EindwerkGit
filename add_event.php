@@ -44,10 +44,11 @@ $uid = $_SESSION['u_id'];
     
         <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/mediaq.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
+<body id="containerAddE">
 
     <div id="container">
         
@@ -71,7 +72,7 @@ $uid = $_SESSION['u_id'];
             <textarea type="text" id="teaser" required="required" name="teaser" placeholder="Mijn event ..."></textarea>
 
             <label for="link">Event Link</label>
-            <input type="text" id="link" required="required" name="link" placeholder="mijnevent.com/event">
+            <span id="scaleLink"><p id="http">HTTP://</p><input type="text" id="link" required="required" name="link" placeholder="www.event.be"></span>
 
             <label for="beacon">Zone</label>
 
@@ -96,7 +97,7 @@ $uid = $_SESSION['u_id'];
 
             <div id="BC" style="display: none;">    
             <p id="curBC">
-            Currently being broadcasted at <span id="zoneBC"></span>
+            Current broadcast for <span id="zoneBC"></span>;
             </p>
             <p id="CBtitle">
             </p>
@@ -108,17 +109,13 @@ $uid = $_SESSION['u_id'];
             
             </div>
             </div>
-            </div>
-
-                </style>
-            </div>
             
             <label for="enddate">End Date</label>
             <br />
             <input type="date" id="enddate" required="required" name="enddate">
 
             <div id="submitknop">
-                <button type="submit" id="submitEvent" class="btn btn-default">Done</button>
+                <button type="submit" id="submitEvent" class="btn btn-default">Add Event</button>
             </div>
         </form>
     </div>
