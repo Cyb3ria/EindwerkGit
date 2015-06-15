@@ -39,6 +39,11 @@ body
     font-family: 'Raleway', sans-serif;
 }
 
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
 #bgcolorlogin
 {
     background-color: #EEEEEE;
@@ -612,4 +617,91 @@ display: inline-block;
 #JamesSpecific
 {
     display: block;
+}
+
+/*******************************About*************************/
+#aboutBody
+{
+    background-color: #fff;
+}
+
+#titleAbout
+{
+    font-family: 'SCRIPTBL';
+    color: white;
+    font-size: 90px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+
+}
+
+#jamesImg
+{
+    width: 150px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#early
+{
+    color: #039BA9;
+    font-size: 30px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+#aboutBody p
+{
+    color: #2e2e2e;
+    text-align: justify;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 25px;
+}
+
+#by
+{
+    color: #2e2e2e;
+    text-align: justify;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+#TM
+{
+        color: #2e2e2e;
+    text-align: justify;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+#TMlogo
+{
+    background-color: white;
+    margin-left: 10%;
+    line-height: 20px;
+    margin-top: 10px;
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+#oranjeDiv
+{
+    background-color: #F26140;
+    padding-bottom: 20px;
 }

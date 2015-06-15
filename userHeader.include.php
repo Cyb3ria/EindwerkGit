@@ -6,7 +6,6 @@
 		<li><a href="#">Upcoming Events <i class="fa fa-angle-right"></i></a></li>
 		<li><a href="#">Administration <i class="fa fa-angle-right"></i></a></li>
 	</ul>
-    <img id="logoTM" src="img/thomasMore_logo.png" />
 </div>
     
     <div class="header">
