@@ -131,13 +131,34 @@
 				$result = $db->conn->query($sql);
 				return $result;
 			}
+
 		public function broadcast()
 			{
 				$db = new db();
 				$sql = "UPDATE notifications SET n_broadcast ='0' WHERE n_beacon ='".$this->m_sBeacon."' AND n_broadcast='1'";
 				$result = $db->conn->query($sql);
 				return $result;
+			}
+
+		public function favorite($uid, $EventID)
+			{
+				$db = new db();
+				$sql = "INSERT INTO favorites (u_id, n_id) VALUES
+				('".$db->conn->real_escape_string($uid)."',
+				'".$db->conn->real_escape_string($EventID)."')";
+				$result = $db->conn->query($sql);
+				return $result;
+			}
+
+		public function Checkfavorite($uid, $EventID)
+			{
+				$db = new db();
+				$sql = "SELECT * FROM favorites WHERE u_id ='".$uid."' AND n_id ='".$EventID."'";	
+				$result = $db->conn->query($sql);
+				return $result;
 			}	
+
+
 		public function save($uid)
 			{
             

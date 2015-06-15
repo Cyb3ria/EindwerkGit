@@ -10,8 +10,8 @@ if(!isset($_SESSION['loggedin']))
 {
   header('location: login.php');
 }
-
-/*  $db = new db();
+$uid = $_SESSION['u_id'];
+$db = new db();
   
 while ($row = mysqli_fetch_assoc($arrayFavorites))
 {
@@ -19,7 +19,7 @@ while ($row = mysqli_fetch_assoc($arrayFavorites))
   $uid = $_SESSION['u_id'];
 }
 
-if(isset($_POST['favorite_row'])) 
+/*if(isset($_POST['favorite_row'])) 
 {
   $uid = $_SESSION['u_id'];
    $Fid = $_POST['id_to_be_favo'];
@@ -37,7 +37,7 @@ if(isset($_POST['Unfavorite_row']))
   $unFid = $_POST['id_to_be_unfavo'];
     if(!mysqli_query($db->conn, "DELETE FROM favorites WHERE f_id ='".$unFid."'"))
     {
-      echo mysqli_error($db);
+      echo mysqli_error($db->conn);
     }
   }*/
 ?>
@@ -82,9 +82,9 @@ if(isset($_POST['Unfavorite_row']))
     <h4 class="teaserNote"><?= $f['n_beacon']?> | <?= $f['n_date']?></h4>
 
 <?php
+    echo $f['f_id'];
     echo "<form method='post'>
-          <input type ='hidden' name='id_to_be_unfavo'
-          value='".$f['f_id']."' />
+          <input type ='hidden' name='id_to_be_unfavo' value='".$f['f_id']."' />
           <input type='submit' class='favoriteTrue' id='FavoBtn' name='unfavorite_row' value='favorite' />
           </form>
           <div class='clearfix'> </div>";       
@@ -111,9 +111,9 @@ if(isset($_POST['Unfavorite_row']))
     <h4 class="teaserNote"><?= $a['n_beacon']?> | <?= $a['n_date']?></h4>
 <?php
     echo "<form method='post'>
-          <input type ='hidden' class='tempid' name='id_to_be_favo'
+          <input type ='hidden' class='tempidF' name='id_to_be_favo'
           value='".$a['n_id']."' />
-          <input type='submit' class='favoriteFalse' id='FavoBtn' name='favorite_row' value='favorite' />
+          <input type='submit' class='favoriteFalse' data='".$a['n_id']."' data-user ='".$uid."'id='FavoBtn' name='favorite_row' value='favorite' />
           </form> 
           <div class='clearfix'> </div>";       
 ?>

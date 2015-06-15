@@ -31,20 +31,26 @@ $(document).ready(function()
 			}
 		});
 	});
-    
-    
-    $('.favoriteFalse').on('click', function () 
+
+
+
+
+//Index
+	//Favorite
+	$('.favoriteFalse').on('click', function () 
 	{
-		var Fav = $('.tempid').val();
+		event.preventDefault();
+		var butData = $(this).attr("data");
+		var userData = $(this).attr("data-user");
 
      	$.ajax
      	({
-    	url: 		'ajax/ajax.php',
-    	data: 		'n_id' + Fav,
-    	dataType: 	'HTML',
+     	type:		'GET',
+    	url: 		'ajax-favorite.php',
+    	data: 		'n_id='+butData+'&uid='+userData,
     	success: function(data)
     		{
-    			console.log('yay');
+    			location.reload(true)
 			},
 		error: function(xhr, status, error) 
 			{
@@ -54,6 +60,5 @@ $(document).ready(function()
 			}
 		});
 	});
-    
     
 });
