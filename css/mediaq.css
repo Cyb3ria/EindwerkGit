@@ -23,7 +23,7 @@ textarea
     margin-right: auto;
 }
 
-#titel, .beacon, #enddate
+#titel, .beacon, #enddate, #major, #minor
 {
     width: 444px;
     height: 30px;
@@ -100,7 +100,7 @@ textarea
     margin-right: auto;
 }
 
-#titel, .beacon, #enddate
+#titel, .beacon, #enddate, #major, #minor
 {
     width: 790px;
     height: 30px;

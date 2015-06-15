@@ -297,7 +297,7 @@ textarea
     margin-right: auto;
 }
 
-#titel, .beacon, #enddate
+#titel, .beacon, #enddate, #major, #minor
 {
     width: 328px;
     height: 30px;
@@ -411,6 +411,8 @@ display: inline-block;
 {
     
 }
+/*******************************AddBeacon********************************/
+
 
 /*******************************MENU********************************/
 .slideout-menu {

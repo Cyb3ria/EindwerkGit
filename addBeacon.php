@@ -37,11 +37,13 @@ $beacon = new Beacon();
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <link rel="stylesheet" type="text/css" href="css/reset.css">
+
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/mediaq.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
+<body id="containerAddE">
 
     <div id="container">
 
@@ -57,7 +59,7 @@ $beacon = new Beacon();
 
             <div id="beaconsdiv">
                 
-                <select id="name" name="name" required="required" selected="Pick A Zone">
+                <select id="beacon0" name="name" required="required" selected="Pick A Zone">
 
                     <optgroup label="Campus Kruidtuin">
                     <option class="sub-item" value="Campus Kruidtuin">Campus Kruidtuin</option>
