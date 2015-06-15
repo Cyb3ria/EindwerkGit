@@ -76,9 +76,10 @@ if(isset($_POST['Unfavorite_row']))
     echo $f['n_type'];
     echo "</div>";
 ?>
+    <div class="notesDiv">
     <h4 class="titleNote"><?= $f['n_title']?></h4>
     </a>
-    <h4 class="teaserNote"><?= $f['n_beacon']?> | <?= $f['n_date']?></h4>
+    <h4 class="teaserNote"><?= $f['n_beacon']?> | <?= $f['n_date']?></h4></div>
 
 <?php
     echo "<form method='post'>
@@ -87,8 +88,9 @@ if(isset($_POST['Unfavorite_row']))
           </form>
           <div class='clearfix'> </div>";       
 ?>
-</div>
+
 <div class = "lijn">lijn</div>
+    </div>
 <?php 
 }
 ?> 
@@ -103,9 +105,10 @@ if(isset($_POST['Unfavorite_row']))
     echo $a['n_type'];
     echo "</div>";
 ?>
+    <div class="notesDiv">
     <h4 class="titleNote"><?= $a['n_title']?></h4>
     </a>
-    <h4 class="teaserNote"><?= $a['n_beacon']?> | <?= $a['n_date']?></h4>
+    <h4 class="teaserNote"><?= $a['n_beacon']?> | <?= $a['n_date']?></h4></div>
 <?php
     echo "<form method='post'>
           <input type ='hidden' class='tempidF' name='id_to_be_favo'
@@ -114,8 +117,9 @@ if(isset($_POST['Unfavorite_row']))
           </form> 
           <div class='clearfix'> </div>";       
 ?>
-</div>
 <div class = "lijn">lijn</div>
+</div>
+
 <?php 
   }
 ?> 

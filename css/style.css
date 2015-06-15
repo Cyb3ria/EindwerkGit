@@ -155,10 +155,33 @@ padding-left: 10px;
   
 }
 
+.event-I, .event-E
+{
+    display: block;
+    width: 50px;
+    height: 33px;
+    background-color: red;
+    text-align:center;
+    padding-top: 17px;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.event-I
+{
+    background-color: #039BA9;
+    color: white;
+}
+
+.event-E
+{
+    background-color: #F26140;
+    color: white;
+}
 
 .SingleNote
 {
-    margin-left: 20px;
+    padding-left: 20px;
     padding-top: 20px;
 }
 
@@ -166,6 +189,7 @@ padding-left: 10px;
 {
     border-bottom: 1px solid #BFBFBF;
     text-indent: -9999px;
+    margin-left: -20px;
 }
 
 .titleNote
@@ -176,15 +200,21 @@ padding-left: 10px;
     display: inline-block;
 }
 
+.notesDiv
+{
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+    padding-bottom: 5px;
+
+}
+
 .teaserNote, .datenote
 {
     font-size: 15px;
+
 }
 
-.event-E, .event-I
-{
-    display: inline-block;
-}
 .teaserNote
 {
     margin-bottom: 5px;
