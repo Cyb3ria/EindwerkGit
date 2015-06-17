@@ -13,8 +13,6 @@ while ($row = mysqli_fetch_assoc($arrayUser))
   $group = $row['u_group'];
 }
 
-echo $group;
-
 if($group == 'admin')
 {
 echo "<div class='slideout-menu'>";

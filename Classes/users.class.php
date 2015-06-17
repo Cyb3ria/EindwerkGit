@@ -47,6 +47,14 @@
 		 	}
 		 }
 
+		 public function userDetails($uid)
+		 {
+		 	$db = new db();
+		 	$sql= "SELECT * FROM users WHERE u_id ='".$uid."'";
+			$result = $db->conn->query($sql);
+			return $result;
+		 }
+
 		 public function userCheck($p_sInput)
 		 {
 		 	$db = new db();

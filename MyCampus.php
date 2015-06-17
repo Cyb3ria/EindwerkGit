@@ -9,8 +9,22 @@ if(!isset($_SESSION['loggedin']))
   header('location: login.php');
 }
 $uid = $_SESSION['u_id'];
- 
+$u = new user();
+
+$arrayUser = $u->userDetails($uid);
+
+while ($row = mysqli_fetch_assoc($arrayUser))
+{
+  $campus = $row['u_campus'];
+}
+
+if ($campus == "kt")
+{
 $arrayAllEvents = $m->showCampusKT($uid);
+}else{
+$arrayAllEvents = $m->showCampusDV($uid);	
+}
+
 $arrayFavorites = $m->getFavo();
 
 while ($row = mysqli_fetch_assoc($arrayFavorites))
