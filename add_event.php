@@ -56,7 +56,7 @@ $uid = $_SESSION['u_id'];
         
         <h1 id="BlueTitle">Add event</h1>
     
-        <form id="addeventform" action="" method="POST" enctype="multipart/form-data">
+        <form id="addeventform" action="my_events.php" method="POST" enctype="multipart/form-data">
             <?php if(isset($message)) { echo "<div id='errormessage'>" . $message . "</div>"; } ?>
             <label for="titel">Titel</label>
             <input type="text" id="titel" required="required" name="titel" placeholder="Mijn Event">

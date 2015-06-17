@@ -52,7 +52,7 @@ $beacon = new Beacon();
         <h1 id="BlueTitle">Add beacon</h1>
     
 
-        <form id="addeventform" action="" method="POST" enctype="multipart/form-data">
+        <form id="addeventform" action="beacons.php" method="POST" enctype="multipart/form-data">
             <?php if(isset($message)) { echo "<div id='errormessage'>" . $message . "</div>"; } ?>
 
             <label for="beacon">Zone</label>
