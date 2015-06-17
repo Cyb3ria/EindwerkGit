@@ -18,7 +18,7 @@ $(document).ready(function()
     			var CBtitle = data.EventTitle;
     			var CBlink = data.EventLink;
     			var CBdate = data.EventDate;
-    			
+
     			$("#CBtitle").text(CBtitle);
     			$("#CBlink").text(CBlink);
     			$("#CBdate").text(CBdate);
