@@ -172,8 +172,45 @@
 				$sql = "SELECT count(*) FROM favorites WHERE n_id ='".$NoteId."'";	
 				$result = $db->conn->query($sql);
 				$row=mysqli_fetch_assoc($result);
-				return $row['count(*)'];
-				
+				return $row['count(*)'];	
+			}
+
+		public function showCampusKT()
+			{
+				$uid = $_SESSION['u_id'];
+				$db = new db();
+				$sql = "SELECT * FROM notifications 
+						WHERE 
+						n_beacon = 'Creativity Gym' 
+						OR
+						n_beacon = 'STIP'
+						OR
+						n_beacon = 'Cafetaria KruidTuin'
+						AND 
+						n_id !=
+					  	(				  
+					  		SELECT n_id
+					  		FROM favorites
+					  		WHERE u_id ='".$uid."'
+					  	)";
+
+				$result = $db->conn->query($sql);
+				return $result;
+			}
+
+		public function showCampusDV()
+			{
+				$db = new db();
+				$sql = "SELECT * FROM notifications 
+						WHERE 
+						n_beacon = 'Bibliotheek' 
+						OR WHERE
+						n_beacon = 'Cafetaria De Vest'
+						OR WHERE
+						n_beacon = 'International Office'";
+						
+				$result = $db->conn->query($sql);
+				return $result;
 			}
 
 		public function delete($noteID)

@@ -2,10 +2,6 @@
 session_start();
 include("classes/event.class.php");
 
-if(!isset($_SESSION['loggedin']))
-{
-  header('location: login.php');
-}
 $db = new db();	
 $m = new Event();
 $arrayNotifications = $m->getMine();
