@@ -82,25 +82,12 @@
 		 	$result = $db->conn->query($sql);
 
 		 	$rows = $result->fetch_assoc();
-             
-             $status = "SELECT * FROM users WHERE u_nr = '".$db->conn->real_escape_string($p_sStudentennummer)."' AND u_pass = '".$db->conn->real_escape_string($p_sPassword)."' AND u_group = 'student'";
-             
-             $statusRes = $db->conn->query($status);
                         
 		 	if ($result->num_rows == 1)
 		 	{
-                if ($statusRes->num_rows == 1)
-                {
 		 		$_SESSION['u_id'] = $rows['u_id'];
 				$_SESSION['loggedin'] = 1;
 				header('Location: index.php');
-                }
-                else
-                {		 
-                $_SESSION['u_id'] = $rows['u_id'];
-				$_SESSION['loggedin'] = 1;
-				header('Location: indexAdmin.php');
-                }
 			}
             else
 			{

@@ -33,9 +33,9 @@ if(!isset($_SESSION['loggedin']))
 	<h3>James <a href="#" class="slideout-menu-toggle">&times;</a></h3>
 	<ul>
 		<li><a href="index.php">Home <i class="fa fa-angle-right"></i></a></li>
-		<li><a href="#">Starred Notifications <i class="fa fa-angle-right"></i></a></li>
-		<li><a href="#">Upcoming Events <i class="fa fa-angle-right"></i></a></li>
-		<li><a href="#">Administration <i class="fa fa-angle-right"></i></a></li>
+		<li><a href="MyCampus.php">My Campus<i class="fa fa-angle-right"></i></a></li>
+
+		<li><a href="aboutJames.php">About<i class="fa fa-angle-right"></i></a></li>
 	</ul>
 
 </div>

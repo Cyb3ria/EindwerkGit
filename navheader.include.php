@@ -1,6 +1,5 @@
 <?php
 include_once("classes/users.class.php");
-session_start();
 
 
 $uid = $_SESSION['u_id'];

@@ -1,6 +1,7 @@
 <?php
 session_start();
   include("classes/event.class.php");
+include("classes/users.class.php");
 
 $m = new Event();
 
