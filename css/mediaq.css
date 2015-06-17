@@ -3,13 +3,19 @@
 .favoriteFalse .favoriteTrue{
     -webkit-appearance: none;
     border-radius: 0;
-}    
+}  
+    
+#submitlogin
+    {
+        width: 282px;
+    }
     
 #bgcolorlogin
 {
 
-    height: 116px;
-    padding-top: 8px;
+    height: 117px;
+    padding-top: 9px;
+    width: 282px;
 
 }
     
@@ -60,7 +66,7 @@
 
 #link
 {
-    width: 123px;
+    width: 124px;
     font-size: 15px;
     height: 30px;
 }
