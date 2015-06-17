@@ -112,35 +112,29 @@ else if ($session == 'Cafetaria De Vest')
 
 	<link rel="stylesheet" href="css/reset.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/mediaq.css"/>
+    
 </head>
 <body id="SpecBod">
     
     <wrapper id="SpecWrap">
-    <a href="#" class="slideout-menu-toggle"><i class="fa fa-bars"></i><img id="menu-togglebut" src="img/menu-toggle.png"/></a>
-        
-        <div class="slideout-menu">
-	<h3>James <a href="#" class="slideout-menu-toggle">&times;</a></h3>
-	<ul>
-		<li><a href="index.php">Home <i class="fa fa-angle-right"></i></a></li>
-		<li><a href="#">Starred Notifications <i class="fa fa-angle-right"></i></a></li>
-		<li><a href="#">Upcoming Events <i class="fa fa-angle-right"></i></a></li>
-		<li><a href="#">Administration <i class="fa fa-angle-right"></i></a></li>
-	</ul>
-</div>
+
+        <img id="BackButton" src="img/arrowB.png" onclick="goBack()"></img>
 
     <div id="Spcontent">
     
         <h1 id="eventTitel"><?= $EventTitle; ?></h1>
+        <div id="eventIconsDiv">
         <span class="eventIcons"><img src="img/loc.png"><h2>&#64;<?= $session; ?></h2></span>
         <div class="clearfix"></div>
         <span class="eventIcons"><img class="imageSP" src="img/date.png"><h2><?= $EventDate; ?></h2></span>
                 <div class="clearfix"></div>
         <?php
-            echo ' <span class="eventIcons"><img src="img/starSP.png"><h2 >'.$TotalFavs.' Like(s)</h2></span>';
+            echo ' <span class="eventIcons"><img src="img/starSP.png"><h2 >'.$TotalFavs.' Like(s)</h2></span></div>';
         ?>        <div class="clearfix"></div>
         <p id="eventText"><?= $EventTeaser; ?></p>
 
-        <a target="_blank" id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>
+        <a id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>
 
 
         
@@ -151,5 +145,9 @@ else if ($session == 'Cafetaria De Vest')
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 <script src="ajax/ajax.js" type="text/javascript"></script>
 <script src="js/menu.js" type="text/javascript"></script>
-
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
 </html>

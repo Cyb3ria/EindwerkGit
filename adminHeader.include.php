@@ -6,7 +6,7 @@
         		<li><a href="beacons.php">Beacon List<i class="fa fa-angle-right"></i></a></li>
 		<li><a href="add_event.php">Add Notification<i class="fa fa-angle-right"></i></a></li>
         <li><a href="addBeacon.php">Add Beacon<i class="fa fa-angle-right"></i></a></li>
-                <li><a href="aboutJames.php">About<i class="fa fa-angle-right"></i></a></li>
+                <li><a href="aboutJamesAdmin.php">About<i class="fa fa-angle-right"></i></a></li>
         
         
         

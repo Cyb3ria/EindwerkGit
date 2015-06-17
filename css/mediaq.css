@@ -1,8 +1,37 @@
 @media (max-width : 720px){
 
+#bgcolorlogin
+{
+
+    height: 110px;
+
+}
+    
+    #eventTitel
+{ 
+
+    width: 250px;
+
+}
+    
+    #eventText
+{
+
+    width: 250px;
+
+    
+}
+    
+    #eventLink
+{
+
+    width: 250px;
+    
+}
+    
 #addeventform
 {
-    width: 300px;
+    width: 200px;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -11,7 +40,7 @@
 textarea
 {
     resize: none;
-    width: 287px;
+    width: 187px;
     height: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -19,19 +48,20 @@ textarea
 
 #titel, .beacon, #enddate, #major, #minor
 {
-    width: 290px;
+    width: 190px;
     height: 30px;
 }
 
 #link
 {
-    width: 210px;
+    width: 130px;
+    font-size: 15px;
     height: 30px;
 }
 
 #beacon0
 {
-    width: 290px;
+    width: 190px;
     height: 36px;
     margin-top: 5px;
 }
@@ -40,26 +70,22 @@ textarea
 display: inline-block;
     background-color: #F26140;
     color: white;
-    padding: 11px 5px 9px 5px;
-    width: 70px;
+    padding: 14px 5px 10px 5px;
+    width: 50px;
     text-align: center;
+    font-size: 10px;
 }
 
 #EventType
 {
-    width: 292px;
+    width: 192px;
     height: 36px;
     margin-top: 5px;
 }
 
-#scaleLink
-{
-   width: 60px;
-}
-
 #submitEvent
 {
-    width: 292px;
+    width: 192px;
     font-size: 20px;
     margin-bottom: 50px;
 }
@@ -68,7 +94,7 @@ display: inline-block;
 {
 
 
-    width: 290px;
+    width: 190px;
 
 
 }    
