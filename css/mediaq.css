@@ -1,14 +1,18 @@
 @media (max-width : 720px){
 
 .favoriteFalse .favoriteTrue{
-    -webkit-appearance: none;
-    border-radius: 0;
+    padding-right: -3px;
 }  
     
 #submitlogin
     {
         width: 283px;
     }
+    
+    #scaleLink
+{
+   width: 283px;
+}
     
 #bgcolorlogin
 {
@@ -66,7 +70,7 @@
 
 #link
 {
-    width: 123px;
+    width: 125px;
     font-size: 15px;
     height: 30px;
 }
