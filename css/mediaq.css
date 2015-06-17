@@ -8,7 +8,8 @@
 #bgcolorlogin
 {
 
-    height: 118px;
+    height: 116px;
+    padding-top: 8px;
 
 }
     
@@ -59,7 +60,7 @@
 
 #link
 {
-    width: 120px;
+    width: 123px;
     font-size: 15px;
     height: 30px;
 }
