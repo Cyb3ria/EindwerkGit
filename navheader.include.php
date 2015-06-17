@@ -39,7 +39,7 @@ echo "<h3>James<a href='my_events.php' class='slideout-menu-toggle'>&times;</a><
 echo "<ul>";
 echo "<li><a href='index.php'>Home <i class='fa fa-angle-right'></i></a></li>";
 echo "<li><a href='MyCampus.php'>My Campus<i class='fa fa-angle-right'></i></a></li>";
-echo "<li><a href='aboutJames.php'>About List<i class='fa fa-angle-right'></i></a></li>";
+echo "<li><a href='aboutJames.php'>About<i class='fa fa-angle-right'></i></a></li>";
 echo "</ul>";
 echo "</div>";
 echo "<div class='header'>";
