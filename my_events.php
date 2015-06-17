@@ -29,7 +29,7 @@ $arrayNotifications = $m->getMine();
 </head>
 <body>
     
-    <?php include_once("adminHeader.include.php"); ?>
+    <?php include_once("navheader.include.php"); ?>
         
         <h1 id="BlueTitle">My Events</h1>
 	

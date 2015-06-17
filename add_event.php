@@ -52,7 +52,7 @@ $uid = $_SESSION['u_id'];
 
     <div id="container">
         
-    <?php include_once("adminHeader.include.php"); ?>
+    <?php include_once("navheader.include.php"); ?>
         
         <h1 id="BlueTitle">Add event</h1>
     

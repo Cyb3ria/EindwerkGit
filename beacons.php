@@ -31,7 +31,7 @@ $arrayBeacons = $b->getAll();
 </head>
 <body>
     
-    <?php include_once("adminHeader.include.php"); ?>
+    <?php include_once("navheader.include.php"); ?>
         
         <h1 id="BlueTitle">All Beacons</h1>
 	

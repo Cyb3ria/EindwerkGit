@@ -42,7 +42,7 @@ while ($row = mysqli_fetch_assoc($arrayFavorites))
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <?php include_once("userHeader.include.php"); ?>
+    <?php include_once("navheader.include.php"); ?>
 
 <h1 id="BlueTitle">All Events</h1>
 <div id="notesPrint">

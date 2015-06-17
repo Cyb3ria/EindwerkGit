@@ -47,7 +47,7 @@ $beacon = new Beacon();
 
     <div id="container">
 
-    <?php include_once("adminHeader.include.php"); ?>
+    <?php include_once("navheader.include.php"); ?>
              
         <h1 id="BlueTitle">Add beacon</h1>
     
