@@ -64,7 +64,7 @@ while ($row = mysqli_fetch_assoc($arrayFavorites))
 <p class="likes"><?= $TotalFavs ?> Like(s)</p>
 </div>
 <?php
-    echo "<form method='post'>
+    echo "<form class='sterForm' method='post'>
           <input type ='hidden' name='id_to_be_unfavo' value='".$f['f_id']."' />
           <input type='submit' class='favoriteTrue' data='".$f['n_id']."' data-user ='".$uid."' id='FavoBtn' name='unfavorite_row' value='favorite' />
           </form>
@@ -98,7 +98,7 @@ while ($row = mysqli_fetch_assoc($arrayFavorites))
     
     
 <?php
-    echo "<form method='post'>
+    echo "<form class='sterForm' method='post'>
           <input type ='hidden' class='tempidF' name='id_to_be_favo'
           value='".$a['n_id']."' />
           <input type='submit' class='favoriteFalse' data='".$a['n_id']."' data-user ='".$uid."'id='FavoBtn' name='favorite_row' value='favorite' />
