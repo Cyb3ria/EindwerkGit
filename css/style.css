@@ -39,7 +39,7 @@ body
     font-family: 'Raleway', sans-serif;
 }
 
-input, textfield {
+input, textarea, select{
     -webkit-appearance: none;
     border-radius: 0;
 }
@@ -545,6 +545,7 @@ display: inline-block;
     float: right;
     margin-top: -50px;
     margin-right: 30px;
+    background-color: #F3F3F3;
 }
 
 .favoriteTrue 
@@ -559,6 +560,7 @@ display: inline-block;
     float: right;
     margin-top: -50px;
     margin-right: 30px;
+    background-color: #F3F3F3;
 }
     
 #BlueTitle

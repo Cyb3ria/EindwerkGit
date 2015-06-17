@@ -134,7 +134,7 @@ else if ($session == 'Cafetaria De Vest')
         ?>        <div class="clearfix"></div>
         <p id="eventText"><?= $EventTeaser; ?></p>
 
-        <a id="eventLink" href="http://<?= $_SESSION['n_link']; ?>">Meer informatie</a>
+        <a id="eventLink" href="http://<?= $EventLink; ?>">Meer informatie</a>
 
 
         
