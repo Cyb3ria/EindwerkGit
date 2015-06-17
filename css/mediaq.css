@@ -59,7 +59,7 @@
 
 #link
 {
-    width: 120px;
+    width: 130px;
     font-size: 15px;
     height: 30px;
 }
@@ -69,7 +69,7 @@
 display: inline-block;
     background-color: #F26140;
     color: white;
-    padding: 16px 5px 12px 5px;
+    padding: 16px 5px 14px 5px;
     width: 50px;
     text-align: center;
     font-size: 10px;
@@ -77,14 +77,14 @@ display: inline-block;
 
 #EventType, .beacon, #beacon0
 {
-    width: 200px;
+    width: 210px;
     height: 36px;
     margin-top: 5px;
 }
 
 #submitEvent
 {
-    width: 192px;
+    width: 210px;
     font-size: 20px;
     margin-bottom: 50px;
 }
