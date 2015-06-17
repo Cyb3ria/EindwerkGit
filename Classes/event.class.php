@@ -175,25 +175,14 @@
 				return $row['count(*)'];	
 			}
 
-		public function showCampusKT()
+		public function showCampusKT($uid)
 			{
-				$uid = $_SESSION['u_id'];
 				$db = new db();
 				$sql = "SELECT * FROM notifications 
-						WHERE 
-						n_beacon = 'Creativity Gym' 
-						OR
-						n_beacon = 'STIP'
-						OR
-						n_beacon = 'Cafetaria KruidTuin'
-						AND 
-						n_id !=
-					  	(				  
-					  		SELECT n_id
-					  		FROM favorites
-					  		WHERE u_id ='".$uid."'
-					  	)";
-
+						where n_beacon in ('Creativity Gym','STIP','Cafetaria KruidTuin') and 
+              			n_id not in ( select n_id
+                            		  from favorites
+                            		  where u_id = '".$uid."')";
 				$result = $db->conn->query($sql);
 				return $result;
 			}
@@ -202,13 +191,10 @@
 			{
 				$db = new db();
 				$sql = "SELECT * FROM notifications 
-						WHERE 
-						n_beacon = 'Bibliotheek' 
-						OR WHERE
-						n_beacon = 'Cafetaria De Vest'
-						OR WHERE
-						n_beacon = 'International Office'";
-						
+						where n_beacon in ('Bibliotheek','Cafetaria De Vest','International Office') and 
+              			n_id not in ( select n_id
+                            		  from favorites
+                            		  where u_id = '".$uid."')";			
 				$result = $db->conn->query($sql);
 				return $result;
 			}

@@ -3,16 +3,16 @@ session_start();
   include("classes/event.class.php");
 
 $m = new Event();
-$arrayAllEvents = $m->showCampusKT();
-$arrayFavorites = $m->getFavo();
 
 if(!isset($_SESSION['loggedin']))
 {
   header('location: login.php');
 }
 $uid = $_SESSION['u_id'];
-$db = new db();
-  
+ 
+$arrayAllEvents = $m->showCampusKT($uid);
+$arrayFavorites = $m->getFavo();
+
 while ($row = mysqli_fetch_assoc($arrayFavorites))
 {
   $unfavoriteID = $row['f_id'];
@@ -43,11 +43,10 @@ while ($row = mysqli_fetch_assoc($arrayFavorites))
 <body>
     <?php include_once("userHeader.include.php"); ?>
 
-<h1 id="BlueTitle">All Events</h1>
+<h1 id="BlueTitle">My Campus</h1>
 <div id="notesPrint">
 
 <?php
-	var_dump ($arrayAllEvents);
   foreach($arrayFavorites as $f) 
   {
     $NoteId = $f['n_id'];
